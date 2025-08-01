@@ -1,16 +1,65 @@
 body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-align: center;
-  display: flex;
-  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 h1 {
-  font-weight: lighter;
+  font-weight: 500;
 }
 
-center {
+h2 {
+  font-size: medium;
+}
+
+/*-----------------------------------*/
+/* Tabs -----------------------------*/
+/*-----------------------------------*/
+
+.tab {
+  background-color: white;
+  padding: 10px 30px 10px 10px;
+  border: 1.5px solid black;
+}
+
+.tabLine {
+  background-color: black;
+  height: 2px;
+}
+
+/*-----------------------------------*/
+/* Information ----------------------*/
+/*-----------------------------------*/
+
+.information {
   display: flex;
-  justify-content: center;
+  gap: 10px;
+}
+.header {
+  margin-top: 40px;
+}
+
+.inter {
+  border: 1.5px solid #0540f5;
+  margin-top: 10px;
+  display: flex;
   align-items: center;
+  height: 400px;
+  width: 400px;
+  flex-direction: column;
+}
+
+.holdspace {
+  border: 1.5px solid black;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  height: 400px;
+  width: 400px;
+  flex-direction: column;
+}
+
+.text {
+  text-align: center;
+  padding: 20px;
 }
