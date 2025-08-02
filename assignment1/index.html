@@ -11,24 +11,27 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <h1>Interaction Design Analysis</h1>
     <h2 style="margin-top: -10px">Jannalyn Tan - s4056775</h2>
 
     <section>
-      <button class="tab">Information Design</button>
-      <button class="tab">Mapping</button>
-      <button class="tab">Characterisation</button>
-      <button class="tab">Feedback</button>
+      <button class="tab active" id="infoTab">Information Design</button>
+      <button class="tab" id="mappingTab">Mapping</button>
+      <button class="tab" id="characterTab">Characterisation</button>
+      <button class="tab" id="feedbackTab">Feedback</button>
 
       <div class="tabLine"></div>
     </section>
 
-    <section class="information">
+    <section class="information" id="infoContent">
       <div class="holdspace">
-        <h1 class="header">Holdspace</h1>
-        <p class="text">
+        <button class="closeBtn hidden" id="infoHoldClose">x</button>
+        <h1 class="header" id="infoHoldTitle">Holdspace</h1>
+        <button class="holdBtn" id="infoHoldBtn">click to reveal</button>
+        <p class="text hidden" id="infoHoldText">
           Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
           faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi
           pretium tellus duis convallis. Tempus leo eu aenean sed diam urna
@@ -40,9 +43,12 @@
       </div>
 
       <div class="inter">
-        <h1 class="header">Inter-symmetric – NNNB</h1>
-        <button>click to reveal</button>
-        <p class="text">
+        <button class="closeBtn hidden" id="infoInterClose">x</button>
+        <h1 class="header" id="infoInterTitle" style="color: #0540f5">
+          Inter-symmetric – NNNB
+        </h1>
+        <button class="interBtn" id="infoInterBtn">click to reveal</button>
+        <p class="text hidden" id="infoInterText">
           Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
           faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi
           pretium tellus duis convallis. Tempus leo eu aenean sed diam urna
@@ -51,6 +57,48 @@
           hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent
           per conubia nostra inceptos himenaeos.
         </p>
+      </div>
+    </section>
+
+    <section class="mapping hidden" id="mappingContent">
+      <div class="holdspace">
+        <button class="closeBtn" id="mapHoldClose">x</button>
+        <h1 class="header" id="mapHoldTitle">Holdspace</h1>
+      </div>
+
+      <div class="inter">
+        <button class="closeBtn" id="mapInterClose">x</button>
+        <h1 class="header" id="mapInterTitle" style="color: #0540f5">
+          Inter-symmetric – NNNB
+        </h1>
+      </div>
+    </section>
+
+    <section class="character hidden" id="characterContent">
+      <div class="holdspace">
+        <button class="closeBtn" id="chaHoldClose">x</button>
+        <h1 class="header" id="chaHoldTitle">Holdspace</h1>
+      </div>
+
+      <div class="inter">
+        <button class="closeBtn" id="chaInterClose">x</button>
+        <h1 class="header" id="chaInterTitle" style="color: #0540f5">
+          Inter-symmetric – NNNB
+        </h1>
+      </div>
+    </section>
+
+    <section class="feedback hidden" id="feedbackContent">
+      <div class="holdspace">
+        <button class="closeBtn" id="feedHoldClose">x</button>
+        <h1 class="header" id="feedHoldTitle">Holdspace</h1>
+      </div>
+
+      <div class="inter">
+        <button class="closeBtn" id="feedInterClose">x</button>
+        <h1 class="header" id="feedInterTitle" style="color: #0540f5">
+          Inter-symmetric – NNNB
+        </h1>
       </div>
     </section>
   </body>
