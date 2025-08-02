@@ -28,6 +28,60 @@ h2 {
 }
 
 /*-----------------------------------*/
+/* Holdspace.  ----------------------*/
+/*-----------------------------------*/
+.holdspace {
+  border: 1px solid black;
+  background-color: black;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 500px;
+  flex-direction: column;
+}
+
+#infoHoldTitle {
+  color: white;
+}
+
+.interBtn {
+  border: 1px solid #0540f5;
+  background-color: white;
+  padding: 10px;
+  font-family: "Courier New", Courier, monospace;
+  color: #0540f5;
+  font-weight: bold;
+}
+
+/*-----------------------------------*/
+/* Inter.      ----------------------*/
+/*-----------------------------------*/
+
+.inter {
+  border: 1px solid #0540f5;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 500px;
+  flex-direction: column;
+
+  font-family: "Courier New", Courier, monospace;
+}
+
+.interBtn {
+  border: 1px solid #0540f5;
+  background-color: white;
+  padding: 10px;
+  font-family: "Courier New", Courier, monospace;
+  color: #0540f5;
+  font-weight: bold;
+}
+
+/*-----------------------------------*/
 /* Information ----------------------*/
 /*-----------------------------------*/
 
@@ -37,29 +91,12 @@ h2 {
 }
 .header {
   margin-top: 40px;
-}
-
-.inter {
-  border: 1.5px solid #0540f5;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  height: 400px;
-  width: 400px;
-  flex-direction: column;
-}
-
-.holdspace {
-  border: 1.5px solid black;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  height: 400px;
-  width: 400px;
-  flex-direction: column;
+  font-weight: bolder;
 }
 
 .text {
   text-align: center;
   padding: 20px;
+
+  font-family: "Open Sans", sans-serif;
 }
