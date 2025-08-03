@@ -92,6 +92,28 @@ h2 {
   color: black;
 }
 
+.holdspace.inverted #mapHoldClose {
+  color: black;
+}
+
+.holdspace.inverted #mapHoldTitle {
+  color: black;
+}
+.holdspace.inverted #chaHoldClose {
+  color: black;
+}
+
+.holdspace.inverted #chaHoldTitle {
+  color: black;
+}
+.holdspace.inverted #feedHoldClose {
+  color: black;
+}
+
+.holdspace.inverted #feedHoldTitle {
+  color: black;
+}
+
 /*-----------------------------------*/
 /* Inter ----------------------------*/
 /*-----------------------------------*/
