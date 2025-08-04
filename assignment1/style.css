@@ -84,29 +84,15 @@ h2 {
   border: 1px solid black;
 }
 
-.holdspace.inverted #infoHoldClose {
-  color: black;
-}
-
 .holdspace.inverted #infoHoldTitle {
-  color: black;
-}
-
-.holdspace.inverted #mapHoldClose {
   color: black;
 }
 
 .holdspace.inverted #mapHoldTitle {
   color: black;
 }
-.holdspace.inverted #chaHoldClose {
-  color: black;
-}
 
-.holdspace.inverted #chaHoldTitle {
-  color: black;
-}
-.holdspace.inverted #feedHoldClose {
+.holdspace.inverted #chaHoldTitle{
   color: black;
 }
 
@@ -173,7 +159,7 @@ h2 {
 #mapHoldClose,
 #feedHoldClose,
 #chaHoldClose {
-  color: white;
+  color: black;
 }
 
 /*-----------------------------------*/
