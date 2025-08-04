@@ -5,22 +5,26 @@ const infoTab = document.querySelector("#infoTab");
 const mappingTab = document.querySelector("#mappingTab");
 const characterTab = document.querySelector("#characterTab");
 const feedbackTab = document.querySelector("#feedbackTab");
+const summaryTab = document.querySelector("#summaryTab");
 
 const infoContent = document.querySelector("#infoContent");
 const mappingContent = document.querySelector("#mappingContent");
 const characterContent = document.querySelector("#characterContent");
 const feedbackContent = document.querySelector("#feedbackContent");
+const summaryContent = document.querySelector("#summaryContent");
 
 infoTab.addEventListener("click", () => {
   infoContent.classList.remove("hidden");
   mappingContent.classList.add("hidden");
   characterContent.classList.add("hidden");
   feedbackContent.classList.add("hidden");
+  summaryContent.classList.add("hidden");
 
   infoTab.classList.add("active");
   mappingTab.classList.remove("active");
   characterTab.classList.remove("active");
   feedbackTab.classList.remove("active");
+  summaryTab.classList.remove("active");
 });
 
 mappingTab.addEventListener("click", () => {
@@ -28,6 +32,7 @@ mappingTab.addEventListener("click", () => {
   infoContent.classList.add("hidden");
   characterContent.classList.add("hidden");
   feedbackContent.classList.add("hidden");
+  summaryContent.classList.add("hidden");
 
   mappingTab.classList.add("active");
   infoTab.classList.remove("active");
@@ -40,6 +45,7 @@ characterTab.addEventListener("click", () => {
   infoContent.classList.add("hidden");
   characterContent.classList.remove("hidden");
   feedbackContent.classList.add("hidden");
+  summaryContent.classList.add("hidden");
 
   mappingTab.classList.remove("active");
   infoTab.classList.remove("active");
@@ -52,6 +58,7 @@ feedbackTab.addEventListener("click", () => {
   infoContent.classList.add("hidden");
   characterContent.classList.add("hidden");
   feedbackContent.classList.remove("hidden");
+  summaryContent.classList.add("hidden");
 
   mappingTab.classList.remove("active");
   infoTab.classList.remove("active");
@@ -109,7 +116,6 @@ infoHoldClose.addEventListener("click", () => {
   infoHoldClose.classList.add("hidden");
 });
 
-
 //-----------------------------------//
 // Mapping.    ----------------------//
 //-----------------------------------//
@@ -133,7 +139,6 @@ mapInterClose.addEventListener("click", () => {
   mapInterBtn.classList.remove("hidden");
   mapInterText.classList.add("hidden");
   mapInterClose.classList.add("hidden");
-  
 });
 
 const mapHoldBtn = document.querySelector("#mapHoldBtn");
@@ -146,7 +151,6 @@ const mapHoldClose = document.querySelector("#mapHoldClose");
 console.log(infoHoldClose);
 const mapHoldspaceBox = document.querySelector("#mappingContent .holdspace");
 console.log(mapHoldspaceBox);
-
 
 mapHoldBtn.addEventListener("click", () => {
   mapHoldBtn.classList.add("hidden");
@@ -174,7 +178,6 @@ const chaInterTitle = document.querySelector("#chaInterTitle");
 console.log(chaInterTitle);
 const chaInterClose = document.querySelector("#chaInterClose");
 console.log(chaInterClose);
-
 
 chaInterBtn.addEventListener("click", () => {
   chaInterBtn.classList.add("hidden");
@@ -212,7 +215,6 @@ chaHoldClose.addEventListener("click", () => {
   chaHoldspaceBox.classList.remove("inverted");
   chaHoldClose.classList.add("hidden");
 });
-
 
 //-----------------------------------//
 // Feedback -------------------------//

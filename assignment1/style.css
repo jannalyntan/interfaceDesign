@@ -92,7 +92,7 @@ h2 {
   color: black;
 }
 
-.holdspace.inverted #chaHoldTitle{
+.holdspace.inverted #chaHoldTitle {
   color: black;
 }
 
@@ -213,4 +213,21 @@ h2 {
   display: flex;
   width: 100%;
   gap: 10px;
+}
+
+/*-----------------------------------*/
+/* Summary Section ------------------*/
+/*-----------------------------------*/
+
+.summary {
+  border: 1px solid #0540f5;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  font-family: "Courier New", Courier, monospace;
 }
