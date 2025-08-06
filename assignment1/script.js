@@ -38,6 +38,7 @@ mappingTab.addEventListener("click", () => {
   infoTab.classList.remove("active");
   characterTab.classList.remove("active");
   feedbackTab.classList.remove("active");
+    summaryTab.classList.remove("active");
 });
 
 characterTab.addEventListener("click", () => {
@@ -51,6 +52,7 @@ characterTab.addEventListener("click", () => {
   infoTab.classList.remove("active");
   characterTab.classList.add("active");
   feedbackTab.classList.remove("active");
+    summaryTab.classList.remove("active");
 });
 
 feedbackTab.addEventListener("click", () => {
@@ -64,6 +66,21 @@ feedbackTab.addEventListener("click", () => {
   infoTab.classList.remove("active");
   characterTab.classList.remove("active");
   feedbackTab.classList.add("active");
+    summaryTab.classList.remove("active");
+});
+
+summaryTab.addEventListener("click", () => {
+  mappingContent.classList.add("hidden");
+  infoContent.classList.add("hidden");
+  characterContent.classList.add("hidden");
+  feedbackContent.classList.add("hidden");
+  summaryContent.classList.remove("hidden");
+
+  mappingTab.classList.remove("active");
+  infoTab.classList.remove("active");
+  characterTab.classList.remove("active");
+  feedbackTab.classList.remove("active");
+    summaryTab.classList.add("active");
 });
 
 //-----------------------------------//
@@ -131,8 +148,7 @@ console.log(mapInterClose);
 
 mapInterBtn.addEventListener("click", () => {
   mapInterBtn.classList.add("hidden");
-  mapInterText.classList.remove("hidden");
-  mapInterClose.classList.remove("hidden");
+  mapInterText.classList.remove("hidden");  mapInterClose.classList.remove("hidden");
 });
 
 mapInterClose.addEventListener("click", () => {
