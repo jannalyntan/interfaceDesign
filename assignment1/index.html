@@ -80,37 +80,51 @@
     ---------------------------------Map----------------------------------
     --------------------------------------------------------------------->
 
-    <!-- change it to a hover and slide in -->
-
     <section class="mapping hidden" id="mappingContent">
       <div class="holdspace" id="mapHoldspcae">
-        <button class="closeBtn" id="mapHoldClose">x</button>
+        <br />
+        <br />
         <h1 class="header" id="mapHoldTitle">Holdspace</h1>
-        <button class="holdBtn" id="mapHoldBtn">click to reveal</button>
-        <p class="text hidden" id="mapHoldText">
-          Holdspace is super straightforward. You just hold down the main button
-          and the sound plays. The mapping is very direct, one action, one
-          result. This keeps the interaction lightweight and keeps the user
-          focused on the sound piece rather than controlling it. The simplicity
-          reinforces the idea that this is something to experience, not to
-          create with.
-        </p>
+        <p class="subtext" style="color: white">Hover to reveal</p>
+        <div class="mappingOverlay">
+          <div class="mappingOverlayText">
+            <h1 class="header" id="mapHoldTitle" style="color: black">
+              Holdspace
+            </h1>
+            <p style="font-family: Open Sans, sans-serif">
+              Holdspace is super straightforward. You just hold down the main
+              button and the sound plays. The mapping is very direct, one
+              action, one result. This keeps the interaction lightweight and
+              keeps the user focused on the sound piece rather than controlling
+              it. The simplicity reinforces the idea that this is something to
+              experience, not to create with.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="inter">
-        <button class="closeBtn hidden" id="mapInterClose">x</button>
+        <br />
+        <br />
         <h1 class="header" id="mapInterTitle" style="color: #0540f5">
           Inter-symmetric – NNNB
         </h1>
-        <button class="interBtn" id="mapInterBtn">click to reveal</button>
-        <p class="text hidden" id="mapInterText">
-          Inter-symmetric is way more open. It doesn’t tell you what to do, but
-          that’s part of the fun. The mapping is designed to reflect real-life
-          hardware synths, so users are encouraged to explore by clicking,
-          dragging, or hovering over different controls. It allows for play and
-          creation. There’s no single “correct” path, it’s all about
-          experimenting.
-        </p>
+        <p class="subtext" id="subtextInter">Hover to reveal</p>
+        <div class="mappingOverlay2">
+          <div class="mappingOverlayText2" style="color: black">
+            <h1 class="header" id="mapInterTitle" style="color: #0540f5">
+              Inter-symmetric – NNNB
+            </h1>
+            <p style="font-family: Open Sans, sans-serif">
+              Holdspace is super straightforward. You just hold down the main
+              button and the sound plays. The mapping is very direct, one
+              action, one result. This keeps the interaction lightweight and
+              keeps the user focused on the sound piece rather than controlling
+              it. The simplicity reinforces the idea that this is something to
+              experience, not to create with.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -118,13 +132,14 @@
     ----------------------------Characterisation------------------------------
     ------------------------------------------------------------------------->
 
-    <!-- add some elements, and make the review a  -->
-
     <section class="character hidden" id="characterContent">
       <div class="holdspace">
-        <button class="closeBtn" id="chaHoldClose">x</button>
+        <section class="onOffBtnCont">
+          <button class="holdBtn" id="onBtn2">on</button>
+          <button class="holdBtn active" id="offBtn2">off</button>
+        </section>
         <h1 class="header" id="chaHoldTitle">Holdspace</h1>
-        <button class="holdBtn" id="chaHoldBtn">click to reveal</button>
+        <p class="subtext" id="chaSubtextHold">Toggle to reveal</p>
         <p class="text hidden" id="chaHoldText">
           Holdspace is simple and clean. There’s hardly any text, and the
           visuals are very minimal. Using simple text to show users how to
@@ -138,11 +153,14 @@
       </div>
 
       <div class="inter">
-        <button class="closeBtn hidden" id="chaInterClose">x</button>
+        <section class="onOffBtnCont">
+          <button class="interBtn" id="onBtn">on</button>
+          <button class="interBtn active" id="offBtn">off</button>
+        </section>
         <h1 class="header" id="chaInterTitle" style="color: #0540f5">
           Inter-symmetric – NNNB
         </h1>
-        <button class="interBtn" id="chaInterBtn">click to reveal</button>
+        <p class="subtext" id="chaSubtextInter">Toggle to reveal</p>
         <p class="text hidden" id="chaInterText">
           Holdspace is simple and clean. There’s hardly any text, and the
           visuals are very minimal. Using simple text to show users how to

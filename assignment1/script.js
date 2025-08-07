@@ -38,7 +38,7 @@ mappingTab.addEventListener("click", () => {
   infoTab.classList.remove("active");
   characterTab.classList.remove("active");
   feedbackTab.classList.remove("active");
-    summaryTab.classList.remove("active");
+  summaryTab.classList.remove("active");
 });
 
 characterTab.addEventListener("click", () => {
@@ -52,7 +52,7 @@ characterTab.addEventListener("click", () => {
   infoTab.classList.remove("active");
   characterTab.classList.add("active");
   feedbackTab.classList.remove("active");
-    summaryTab.classList.remove("active");
+  summaryTab.classList.remove("active");
 });
 
 feedbackTab.addEventListener("click", () => {
@@ -66,7 +66,7 @@ feedbackTab.addEventListener("click", () => {
   infoTab.classList.remove("active");
   characterTab.classList.remove("active");
   feedbackTab.classList.add("active");
-    summaryTab.classList.remove("active");
+  summaryTab.classList.remove("active");
 });
 
 summaryTab.addEventListener("click", () => {
@@ -80,7 +80,7 @@ summaryTab.addEventListener("click", () => {
   infoTab.classList.remove("active");
   characterTab.classList.remove("active");
   feedbackTab.classList.remove("active");
-    summaryTab.classList.add("active");
+  summaryTab.classList.add("active");
 });
 
 //-----------------------------------//
@@ -137,99 +137,124 @@ infoHoldClose.addEventListener("click", () => {
 // Mapping.    ----------------------//
 //-----------------------------------//
 
-const mapInterBtn = document.querySelector("#mapInterBtn");
-console.log(mapInterBtn);
-const mapInterText = document.querySelector("#mapInterText");
-console.log(mapInterText);
-const mapInterTitle = document.querySelector("#mapInterTitle");
-console.log(mapInterTitle);
-const mapInterClose = document.querySelector("#mapInterClose");
-console.log(mapInterClose);
+// const mapInterBtn = document.querySelector("#mapInterBtn");
+// console.log(mapInterBtn);
+// const mapInterText = document.querySelector("#mapInterText");
+// console.log(mapInterText);
+// const mapInterTitle = document.querySelector("#mapInterTitle");
+// console.log(mapInterTitle);
+// const mapInterClose = document.querySelector("#mapInterClose");
+// console.log(mapInterClose);
 
-mapInterBtn.addEventListener("click", () => {
-  mapInterBtn.classList.add("hidden");
-  mapInterText.classList.remove("hidden");  mapInterClose.classList.remove("hidden");
-});
+// // mapInterBtn.addEventListener("click", () => {
+// //   mapInterBtn.classList.add("hidden");
+// //   mapInterText.classList.remove("hidden");
+// //   mapInterClose.classList.remove("hidden");
+// // });
 
-mapInterClose.addEventListener("click", () => {
-  mapInterBtn.classList.remove("hidden");
-  mapInterText.classList.add("hidden");
-  mapInterClose.classList.add("hidden");
-});
+// // mapInterClose.addEventListener("click", () => {
+// //   mapInterBtn.classList.remove("hidden");
+// //   mapInterText.classList.add("hidden");
+// //   mapInterClose.classList.add("hidden");
+// // });
 
-const mapHoldBtn = document.querySelector("#mapHoldBtn");
-console.log(mapHoldBtn);
-const mapHoldText = document.querySelector("#mapHoldText");
-console.log(mapInterText);
-const mapHoldTitle = document.querySelector("#mapHoldTitle");
-console.log(mapInterTitle);
-const mapHoldClose = document.querySelector("#mapHoldClose");
-console.log(infoHoldClose);
-const mapHoldspaceBox = document.querySelector("#mappingContent .holdspace");
-console.log(mapHoldspaceBox);
+// const mapHoldBtn = document.querySelector("#mapHoldBtn");
+// console.log(mapHoldBtn);
+// const mapHoldText = document.querySelector("#mapHoldText");
+// console.log(mapInterText);
+// const mapHoldTitle = document.querySelector("#mapHoldTitle");
+// console.log(mapInterTitle);
+// const mapHoldClose = document.querySelector("#mapHoldClose");
+// console.log(infoHoldClose);
+// const mapHoldspaceBox = document.querySelector("#mappingContent .holdspace");
+// console.log(mapHoldspaceBox);
 
-mapHoldBtn.addEventListener("click", () => {
-  mapHoldBtn.classList.add("hidden");
-  mapHoldText.classList.remove("hidden");
-  mapHoldspaceBox.classList.add("inverted");
-  mapHoldClose.classList.remove("hidden");
-});
+// // mapHoldBtn.addEventListener("click", () => {
+// //   mapHoldBtn.classList.add("hidden");
+// //   mapHoldText.classList.remove("hidden");
+// //   mapHoldspaceBox.classList.add("inverted");
+// //   mapHoldClose.classList.remove("hidden");
+// // });
 
-mapHoldClose.addEventListener("click", () => {
-  mapHoldBtn.classList.remove("hidden");
-  mapHoldText.classList.add("hidden");
-  mapHoldspaceBox.classList.remove("inverted");
-  mapHoldClose.classList.add("hidden");
-});
+// // mapHoldClose.addEventListener("click", () => {
+// //   mapHoldBtn.classList.remove("hidden");
+// //   mapHoldText.classList.add("hidden");
+// //   mapHoldspaceBox.classList.remove("inverted");
+// //   mapHoldClose.classList.add("hidden");
+// // });
 
 //-----------------------------------//
 // Characterisation------------------//
 //-----------------------------------//
 
-const chaInterBtn = document.querySelector("#chaInterBtn");
-console.log(chaInterBtn);
 const chaInterText = document.querySelector("#chaInterText");
 console.log(chaInterText);
 const chaInterTitle = document.querySelector("#chaInterTitle");
 console.log(chaInterTitle);
-const chaInterClose = document.querySelector("#chaInterClose");
-console.log(chaInterClose);
+const chaSubTitle = document.querySelector("#chaSubtextInter");
+console.log(chaSubTitle);
+const chaInterOnBtn = document.querySelector("#onBtn");
+console.log(chaInterOnBtn);
+const chaInterOffBtn = document.querySelector("#offBtn");
+console.log(chaInterOffBtn);
 
-chaInterBtn.addEventListener("click", () => {
-  chaInterBtn.classList.add("hidden");
-  chaInterText.classList.remove("hidden");
-  chaInterClose.classList.remove("hidden");
+let isInterOn = false; // default state: text is hidden
+
+chaInterOnBtn.addEventListener("click", () => {
+  if (!isInterOn) {
+    chaInterText.classList.remove("hidden");
+    chaInterOnBtn.classList.add("active");
+    chaInterOffBtn.classList.remove("active");
+    chaSubTitle.classList.add("hidden");
+    isInterOn = true;
+  }
 });
 
-chaInterClose.addEventListener("click", () => {
-  chaInterBtn.classList.remove("hidden");
-  chaInterText.classList.add("hidden");
-  chaInterClose.classList.add("hidden");
+chaInterOffBtn.addEventListener("click", () => {
+  if (isInterOn) {
+    chaInterText.classList.add("hidden");
+    chaInterOffBtn.classList.add("active");
+    chaInterOnBtn.classList.remove("active");
+    chaSubTitle.classList.remove("hidden");
+    isInterOn = false;
+  }
 });
 
-const chaHoldBtn = document.querySelector("#chaHoldBtn");
-console.log(chaHoldBtn);
 const chaHoldText = document.querySelector("#chaHoldText");
 console.log(chaHoldText);
 const chaHoldTitle = document.querySelector("#chaHoldTitle");
 console.log(chaHoldTitle);
-const chaHoldClose = document.querySelector("#chaHoldClose");
-console.log(chaHoldClose);
+const chaSubTitleHold = document.querySelector("#chaSubtextHold");
+console.log(chaSubTitleHold);
+const chaHoldOnBtn = document.querySelector("#onBtn2");
+console.log(chaHoldOnBtn);
+const chaHoldOffBtn = document.querySelector("#offBtn2");
+console.log(chaHoldOffBtn);
 const chaHoldspaceBox = document.querySelector("#characterContent .holdspace");
-console.log(mapHoldspaceBox);
+console.log(chaHoldspaceBox);
 
-chaHoldBtn.addEventListener("click", () => {
-  chaHoldBtn.classList.add("hidden");
-  chaHoldText.classList.remove("hidden");
-  chaHoldspaceBox.classList.add("inverted");
-  chaHoldClose.classList.remove("hidden");
+let isHoldOn = false; // default state: text is hidden
+
+chaHoldOnBtn.addEventListener("click", () => {
+  if (!isHoldOn) {
+    chaHoldText.classList.remove("hidden");
+    chaHoldOnBtn.classList.add("active");
+    chaHoldOffBtn.classList.remove("active");
+    chaSubTitleHold.classList.add("hidden");
+    chaHoldspaceBox.classList.add("inverted");
+    isHoldOn = true;
+  }
 });
 
-chaHoldClose.addEventListener("click", () => {
-  chaHoldBtn.classList.remove("hidden");
-  chaHoldText.classList.add("hidden");
-  chaHoldspaceBox.classList.remove("inverted");
-  chaHoldClose.classList.add("hidden");
+chaHoldOffBtn.addEventListener("click", () => {
+  if (isHoldOn) {
+    chaHoldText.classList.add("hidden");
+    chaHoldOffBtn.classList.add("active");
+    chaHoldOnBtn.classList.remove("active");
+    chaSubTitleHold.classList.remove("hidden");
+    chaHoldspaceBox.classList.remove("inverted");
+    isHoldOn = false;
+  }
 });
 
 //-----------------------------------//
