@@ -8,12 +8,9 @@ body {
   margin-right: 5%;
 }
 
-h1 {
-  font-weight: 500;
-}
-
 h2 {
-  font-size: medium;
+  font-weight: lighter;
+  font-style: italic;
 }
 
 /*-----------------------------------*/
@@ -76,6 +73,7 @@ h2 {
 .holdBtn:hover {
   background-color: white;
   color: black;
+  border: 1px solid black;
 }
 
 /* Holdspace inverted state */
@@ -191,7 +189,7 @@ h2 {
 .text {
   text-align: center;
   padding: 40px;
-  margin-top: -25px;
+  margin-top: -40px;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -396,9 +394,26 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 400px;
+  height: 500px;
   width: 100%;
   flex-direction: column;
   position: relative;
   font-family: "Courier New", Courier, monospace;
+}
+
+.summaryBtn {
+  display: flex;
+  gap: 10px;
+  margin-top: -40px;
+}
+
+/*-----------------------------------*/
+/* Ending  Section ------------------*/
+/*-----------------------------------*/
+
+.endtag {
+  text-align: end;
+  font-family: "Open Sans", sans-serif;
+  font-weight: lighter;
+  font-size: small;
 }

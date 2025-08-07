@@ -283,7 +283,7 @@ feedHoldBtn.addEventListener("click", () => {
   const loadingInterval = setInterval(() => {
     percent++;
     loadingFill.style.width = `${percent}%`;
-    loadingText.textContent = `Loading... ${percent}%`;
+    loadingText.textContent = `Loading ${percent}%`;
 
     if (percent >= 100) {
       clearInterval(loadingInterval);
@@ -300,4 +300,42 @@ feedHoldClose.addEventListener("click", () => {
   feedHoldspaceBox.classList.remove("inverted");
   feedHoldClose.classList.add("hidden");
   feedHoldLoading.classList.add("hidden");
+});
+
+const feedInterBtn = document.querySelector("#feedInterBtn");
+const feedInterText = document.querySelector("#feedInterText");
+const feedInterClose = document.querySelector("#feedInterClose");
+const feedInterLoading = document.querySelector("#feedInterLoading");
+
+const loadingFillInter = document.getElementById("loadingFillInter");
+const loadingTextInter = document.getElementById("loadingTextInter");
+
+feedInterBtn.addEventListener("click", () => {
+  feedInterBtn.classList.add("hidden");
+  feedInterClose.classList.remove("hidden");
+
+  // Reset
+  loadingFillInter.style.width = "0%";
+  loadingTextInter.textContent = "Loading 0%";
+  feedInterLoading.classList.remove("hidden");
+
+  let percent = 0;
+  const loadingInterval = setInterval(() => {
+    percent++;
+    loadingFillInter.style.width = `${percent}%`;
+    loadingTextInter.textContent = `Loading ${percent}%`;
+
+    if (percent >= 100) {
+      clearInterval(loadingInterval);
+      feedInterLoading.classList.add("hidden");
+      feedInterText.classList.remove("hidden");
+    }
+  }, 20); // ~2 seconds total (100 x 20ms = 2000ms)
+});
+
+feedInterClose.addEventListener("click", () => {
+  feedInterBtn.classList.remove("hidden");
+  feedInterText.classList.add("hidden");
+  feedInterClose.classList.add("hidden");
+  feedInterLoading.classList.add("hidden");
 });
