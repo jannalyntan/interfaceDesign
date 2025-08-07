@@ -261,43 +261,37 @@ chaHoldOffBtn.addEventListener("click", () => {
 // Feedback -------------------------//
 //-----------------------------------//
 
-const feedInterBtn = document.querySelector("#feedInterBtn");
-console.log(feedInterBtn);
-const feedInterText = document.querySelector("#feedInterText");
-console.log(feedInterText);
-const feedInterTitle = document.querySelector("#feedInterTitle");
-console.log(feedInterTitle);
-const feedInterClose = document.querySelector("#feedInterClose");
-console.log(feedInterClose);
-
-feedInterBtn.addEventListener("click", () => {
-  feedInterBtn.classList.add("hidden");
-  feedInterText.classList.remove("hidden");
-  feedInterClose.classList.remove("hidden");
-});
-
-feedInterClose.addEventListener("click", () => {
-  feedInterBtn.classList.remove("hidden");
-  feedInterText.classList.add("hidden");
-  feedInterClose.classList.add("hidden");
-});
-
 const feedHoldBtn = document.querySelector("#feedHoldBtn");
-console.log(feedHoldBtn);
 const feedHoldText = document.querySelector("#feedHoldText");
-console.log(feedHoldText);
-const feedHoldTitle = document.querySelector("#feedHoldTitle");
-console.log(feedHoldTitle);
 const feedHoldClose = document.querySelector("#feedHoldClose");
-console.log(feedHoldClose);
+const feedHoldLoading = document.querySelector("#feedHoldLoading");
 const feedHoldspaceBox = document.querySelector("#feedbackContent .holdspace");
-console.log(feedHoldspaceBox);
+
+const loadingFill = document.getElementById("loadingFill");
+const loadingText = document.getElementById("loadingText");
 
 feedHoldBtn.addEventListener("click", () => {
   feedHoldBtn.classList.add("hidden");
-  feedHoldText.classList.remove("hidden");
-  feedHoldspaceBox.classList.add("inverted");
   feedHoldClose.classList.remove("hidden");
+
+  // Reset
+  loadingFill.style.width = "0%";
+  loadingText.textContent = "Loading 0%";
+  feedHoldLoading.classList.remove("hidden");
+
+  let percent = 0;
+  const loadingInterval = setInterval(() => {
+    percent++;
+    loadingFill.style.width = `${percent}%`;
+    loadingText.textContent = `Loading... ${percent}%`;
+
+    if (percent >= 100) {
+      clearInterval(loadingInterval);
+      feedHoldLoading.classList.add("hidden");
+      feedHoldText.classList.remove("hidden");
+      feedHoldspaceBox.classList.add("inverted");
+    }
+  }, 20); // ~2 seconds total (100 x 20ms = 2000ms)
 });
 
 feedHoldClose.addEventListener("click", () => {
@@ -305,4 +299,5 @@ feedHoldClose.addEventListener("click", () => {
   feedHoldText.classList.add("hidden");
   feedHoldspaceBox.classList.remove("inverted");
   feedHoldClose.classList.add("hidden");
+  feedHoldLoading.classList.add("hidden");
 });
