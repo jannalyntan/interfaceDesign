@@ -1,0 +1,419 @@
+/*-----------------------------------*/
+/* Base Styles ----------------------*/
+/*-----------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-right: 5%;
+}
+
+h2 {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+/*-----------------------------------*/
+/* Tabs -----------------------------*/
+/*-----------------------------------*/
+.tab {
+  background-color: white;
+  padding: 10px 30px 10px 10px;
+  border: 1.5px solid black;
+  cursor: pointer;
+}
+
+.tabLine {
+  background-color: black;
+  height: 2px;
+}
+
+.tab.active {
+  border-bottom: 2px solid black;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+}
+
+/*-----------------------------------*/
+/* Holdspace ------------------------*/
+/*-----------------------------------*/
+.holdspace {
+  border: 1px solid black;
+  background-color: black;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+
+#infoHoldTitle,
+#mapHoldTitle,
+#chaHoldTitle,
+#feedHoldTitle {
+  color: white;
+}
+
+.holdBtn {
+  border: 1px solid white;
+  background-color: black;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-weight: medium;
+  cursor: pointer;
+}
+
+.holdBtn:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+/* Holdspace inverted state */
+.inverted {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.holdspace.inverted #infoHoldTitle {
+  color: black;
+}
+
+.holdspace.inverted #mapHoldTitle {
+  color: black;
+}
+
+.holdspace.inverted #chaHoldTitle {
+  color: black;
+}
+
+.holdspace.inverted #feedHoldTitle {
+  color: black;
+}
+
+#subtextHold,
+#chaSubtextHold {
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+/*-----------------------------------*/
+/* Inter ----------------------------*/
+/*-----------------------------------*/
+.inter {
+  border: 1px solid #0540f5;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.interBtn {
+  border: 1px solid #0540f5;
+  background-color: white;
+  padding: 10px;
+  font-family: "Courier New", Courier, monospace;
+  color: #0540f5;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.interBtn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#subtextInter,
+#chaSubtextInter {
+  font-family: "Courier New", Courier, monospace;
+  color: #0540f5;
+}
+
+/*-----------------------------------*/
+/* Close Button ---------------------*/
+/*-----------------------------------*/
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  scale: 1.3;
+}
+
+#infoInterClose,
+#mapInterClose,
+#feedInterClose,
+#chaInterClose {
+  color: #0540f5;
+}
+
+#infoHoldClose,
+#mapHoldClose,
+#feedHoldClose,
+#chaHoldClose {
+  color: black;
+}
+
+/*-----------------------------------*/
+/* Information Section --------------*/
+/*-----------------------------------*/
+.information {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.header {
+  font-weight: bolder;
+}
+
+.text {
+  text-align: center;
+  padding: 40px;
+  margin-top: -40px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.subtext {
+  margin-top: -10px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/*-----------------------------------*/
+/* Mapping Section ------------------*/
+/*-----------------------------------*/
+.mapping {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.mappingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+  transform: translateX(-101%);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.holdspace:hover .mappingOverlay {
+  transform: translateX(0);
+}
+
+.mappingOverlayText {
+  color: black;
+  padding: 30px;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  transition-delay: 0.25s;
+}
+
+.holdspace:hover .mappingOverlayText {
+  opacity: 1;
+}
+
+.mappingOverlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+  transform: translateX(101%);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inter:hover .mappingOverlay2 {
+  transform: translateX(0);
+}
+
+.mappingOverlayText2 {
+  color: black;
+  padding: 30px;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  transition-delay: 0.25s;
+}
+
+.inter:hover .mappingOverlayText2 {
+  opacity: 1;
+}
+
+/*-----------------------------------*/
+/* Character Section ------------------*/
+/*-----------------------------------*/
+.character {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.onOffBtnCont {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#onBtn {
+  margin-right: -10px;
+}
+
+#onBtn,
+#offBtn {
+  font-weight: lighter;
+}
+
+#onBtn.active,
+#offBtn.active {
+  background-color: #0540f5;
+  color: white;
+}
+
+#onBtn2,
+#offBtn2 {
+  font-weight: lighter;
+}
+
+#offBtn2:hover {
+  border: 1px solid black;
+}
+
+#offBtn2.active {
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+}
+
+#onBtn2.active {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+
+/*-----------------------------------*/
+/* Feedback Section ------------------*/
+/*-----------------------------------*/
+.feedback {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.loading-bar-container {
+  width: 200px;
+  height: 12px;
+  background-color: white;
+  border: 1px solid white;
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  width: 0%;
+  background-color: black;
+  transition: width 0.1s ease-out;
+}
+
+.loading-text {
+  color: white;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+#loadingFillInter {
+  height: 100%;
+  width: 0%;
+  background-color: #0540f5;
+  transition: width 0.1s ease-out;
+}
+
+#loadingTextInter {
+  color: #0540f5;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/*-----------------------------------*/
+/* Summary Section ------------------*/
+/*-----------------------------------*/
+
+.summary {
+  border: 1px solid #0540f5;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.summaryBtn {
+  display: flex;
+  gap: 10px;
+  margin-top: -40px;
+}
+
+/*-----------------------------------*/
+/* Ending  Section ------------------*/
+/*-----------------------------------*/
+
+.endtag {
+  text-align: end;
+  font-family: "Open Sans", sans-serif;
+  font-weight: lighter;
+  font-size: small;
+}
