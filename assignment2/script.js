@@ -1,341 +1,205 @@
-//-----------------------------------//
-// Tab ------------------------------//
-//-----------------------------------//
-const infoTab = document.querySelector("#infoTab");
-const mappingTab = document.querySelector("#mappingTab");
-const characterTab = document.querySelector("#characterTab");
-const feedbackTab = document.querySelector("#feedbackTab");
-const summaryTab = document.querySelector("#summaryTab");
+//--------------------------------------------------
+//Letter to Audio
+//--------------------------------------------------
 
-const infoContent = document.querySelector("#infoContent");
-const mappingContent = document.querySelector("#mappingContent");
-const characterContent = document.querySelector("#characterContent");
-const feedbackContent = document.querySelector("#feedbackContent");
-const summaryContent = document.querySelector("#summaryContent");
+const synth = new Tone.Synth().toDestination();
 
-infoTab.addEventListener("click", () => {
-  infoContent.classList.remove("hidden");
-  mappingContent.classList.add("hidden");
-  characterContent.classList.add("hidden");
-  feedbackContent.classList.add("hidden");
-  summaryContent.classList.add("hidden");
+const noteMap = {
+  1: "C2",
+  2: "D2",
+  3: "E2",
+  4: "F2",
+  5: "G2",
+  6: "A2",
+  7: "B2",
+  8: "C3",
+  9: "D3",
+  0: "E3",
 
-  infoTab.classList.add("active");
-  mappingTab.classList.remove("active");
-  characterTab.classList.remove("active");
-  feedbackTab.classList.remove("active");
-  summaryTab.classList.remove("active");
-});
+  a: "C4",
+  b: "D4",
+  c: "E4",
+  d: "F4",
+  e: "G4",
+  f: "A4",
+  g: "B4",
+  h: "C5",
+  i: "D5",
+  j: "E5",
+  k: "F5",
+  l: "G5",
+  m: "A5",
+  n: "B5",
+  o: "C6",
+  p: "D6",
+  q: "E6",
+  r: "F6",
+  s: "G6",
+  t: "A6",
+  u: "B6",
+  v: "C7",
+  w: "D7",
+  x: "E7",
+  y: "F7",
+  z: "G7",
+};
 
-mappingTab.addEventListener("click", () => {
-  mappingContent.classList.remove("hidden");
-  infoContent.classList.add("hidden");
-  characterContent.classList.add("hidden");
-  feedbackContent.classList.add("hidden");
-  summaryContent.classList.add("hidden");
+const chordMap = {
+  " ": ["C4", "E4", "G4"], // C major
+  ",": ["D4", "F4", "A4"], // D minor
+  ".": ["G3", "B3", "D4"], // G major
+  "!": ["A2", "C3", "E3"], // A minor
+  "?": ["E3", "G3", "B3"], // E Minor
+  "'": ["F3", "B3", "C4"], // F Major
+};
 
-  mappingTab.classList.add("active");
-  infoTab.classList.remove("active");
-  characterTab.classList.remove("active");
-  feedbackTab.classList.remove("active");
-  summaryTab.classList.remove("active");
-});
+const noteMapUpper = {
+  A: "C#4",
+  B: "D#4",
+  C: "E#4",
+  D: "F#4",
+  E: "G#4",
+  F: "A#4",
+  G: "B#4",
+  H: "C#5",
+  I: "D#5",
+  J: "E#5",
+  K: "F#5",
+  L: "G#5",
+  M: "A#5",
+  N: "B#5",
+  O: "C#6",
+  P: "D#6",
+  Q: "E#6",
+  R: "F#6",
+  S: "G#6",
+  T: "A#6",
+  U: "B#6",
+  V: "C#7",
+  W: "D#7",
+  X: "E#7",
+  Y: "F#7",
+  Z: "G#7",
+};
 
-characterTab.addEventListener("click", () => {
-  mappingContent.classList.add("hidden");
-  infoContent.classList.add("hidden");
-  characterContent.classList.remove("hidden");
-  feedbackContent.classList.add("hidden");
-  summaryContent.classList.add("hidden");
+const textBox = document.querySelector("textarea");
+console.log(textBox);
+// Play note or chord on key input
+textBox.addEventListener("input", (e) => {
+  const char = e.data; // last typed character
 
-  mappingTab.classList.remove("active");
-  infoTab.classList.remove("active");
-  characterTab.classList.add("active");
-  feedbackTab.classList.remove("active");
-  summaryTab.classList.remove("active");
-});
-
-feedbackTab.addEventListener("click", () => {
-  mappingContent.classList.add("hidden");
-  infoContent.classList.add("hidden");
-  characterContent.classList.add("hidden");
-  feedbackContent.classList.remove("hidden");
-  summaryContent.classList.add("hidden");
-
-  mappingTab.classList.remove("active");
-  infoTab.classList.remove("active");
-  characterTab.classList.remove("active");
-  feedbackTab.classList.add("active");
-  summaryTab.classList.remove("active");
-});
-
-summaryTab.addEventListener("click", () => {
-  mappingContent.classList.add("hidden");
-  infoContent.classList.add("hidden");
-  characterContent.classList.add("hidden");
-  feedbackContent.classList.add("hidden");
-  summaryContent.classList.remove("hidden");
-
-  mappingTab.classList.remove("active");
-  infoTab.classList.remove("active");
-  characterTab.classList.remove("active");
-  feedbackTab.classList.remove("active");
-  summaryTab.classList.add("active");
-});
-
-//-----------------------------------//
-// Information ----------------------//
-//-----------------------------------//
-
-const infoInterBtn = document.querySelector("#infoInterBtn");
-console.log(infoInterBtn);
-const infoInterText = document.querySelector("#infoInterText");
-console.log(infoInterText);
-const infoInterTitle = document.querySelector("#infoInterTitle");
-console.log(infoInterTitle);
-const infoInterClose = document.querySelector("#infoInterClose");
-console.log(infoInterClose);
-
-infoInterBtn.addEventListener("click", () => {
-  infoInterBtn.classList.add("hidden");
-  infoInterText.classList.remove("hidden");
-  infoInterClose.classList.remove("hidden");
-});
-
-infoInterClose.addEventListener("click", () => {
-  infoInterBtn.classList.remove("hidden");
-  infoInterText.classList.add("hidden");
-  infoInterClose.classList.add("hidden");
-});
-
-const infoHoldBtn = document.querySelector("#infoHoldBtn");
-console.log(infoHoldBtn);
-const infoHoldText = document.querySelector("#infoHoldText");
-console.log(infoInterText);
-const infoHoldTitle = document.querySelector("#infoHoldTitle");
-console.log(infoInterTitle);
-const infoHoldClose = document.querySelector("#infoHoldClose");
-console.log(infoHoldClose);
-const holdspaceBox = document.querySelector(".holdspace");
-console.log(holdspaceBox);
-
-infoHoldBtn.addEventListener("click", () => {
-  infoHoldBtn.classList.add("hidden");
-  infoHoldText.classList.remove("hidden");
-  holdspaceBox.classList.add("inverted");
-  infoHoldClose.classList.remove("hidden");
-});
-
-infoHoldClose.addEventListener("click", () => {
-  infoHoldBtn.classList.remove("hidden");
-  infoHoldText.classList.add("hidden");
-  holdspaceBox.classList.remove("inverted");
-  infoHoldClose.classList.add("hidden");
-});
-
-//-----------------------------------//
-// Mapping.    ----------------------//
-//-----------------------------------//
-
-// const mapInterBtn = document.querySelector("#mapInterBtn");
-// console.log(mapInterBtn);
-// const mapInterText = document.querySelector("#mapInterText");
-// console.log(mapInterText);
-// const mapInterTitle = document.querySelector("#mapInterTitle");
-// console.log(mapInterTitle);
-// const mapInterClose = document.querySelector("#mapInterClose");
-// console.log(mapInterClose);
-
-// // mapInterBtn.addEventListener("click", () => {
-// //   mapInterBtn.classList.add("hidden");
-// //   mapInterText.classList.remove("hidden");
-// //   mapInterClose.classList.remove("hidden");
-// // });
-
-// // mapInterClose.addEventListener("click", () => {
-// //   mapInterBtn.classList.remove("hidden");
-// //   mapInterText.classList.add("hidden");
-// //   mapInterClose.classList.add("hidden");
-// // });
-
-// const mapHoldBtn = document.querySelector("#mapHoldBtn");
-// console.log(mapHoldBtn);
-// const mapHoldText = document.querySelector("#mapHoldText");
-// console.log(mapInterText);
-// const mapHoldTitle = document.querySelector("#mapHoldTitle");
-// console.log(mapInterTitle);
-// const mapHoldClose = document.querySelector("#mapHoldClose");
-// console.log(infoHoldClose);
-// const mapHoldspaceBox = document.querySelector("#mappingContent .holdspace");
-// console.log(mapHoldspaceBox);
-
-// // mapHoldBtn.addEventListener("click", () => {
-// //   mapHoldBtn.classList.add("hidden");
-// //   mapHoldText.classList.remove("hidden");
-// //   mapHoldspaceBox.classList.add("inverted");
-// //   mapHoldClose.classList.remove("hidden");
-// // });
-
-// // mapHoldClose.addEventListener("click", () => {
-// //   mapHoldBtn.classList.remove("hidden");
-// //   mapHoldText.classList.add("hidden");
-// //   mapHoldspaceBox.classList.remove("inverted");
-// //   mapHoldClose.classList.add("hidden");
-// // });
-
-//-----------------------------------//
-// Characterisation------------------//
-//-----------------------------------//
-
-const chaInterText = document.querySelector("#chaInterText");
-console.log(chaInterText);
-const chaInterTitle = document.querySelector("#chaInterTitle");
-console.log(chaInterTitle);
-const chaSubTitle = document.querySelector("#chaSubtextInter");
-console.log(chaSubTitle);
-const chaInterOnBtn = document.querySelector("#onBtn");
-console.log(chaInterOnBtn);
-const chaInterOffBtn = document.querySelector("#offBtn");
-console.log(chaInterOffBtn);
-
-let isInterOn = false; // default state: text is hidden
-
-chaInterOnBtn.addEventListener("click", () => {
-  if (!isInterOn) {
-    chaInterText.classList.remove("hidden");
-    chaInterOnBtn.classList.add("active");
-    chaInterOffBtn.classList.remove("active");
-    chaSubTitle.classList.add("hidden");
-    isInterOn = true;
+  if (noteMapUpper[char]) {
+    // Single letter = single note
+    synth.triggerAttackRelease(noteMapUpper[char], "8n");
+  } else if (noteMap[char]) {
+    // Single letter = single note
+    synth.triggerAttackRelease(noteMap[char], "8n");
+  } else if (chordMap[char]) {
+    // Punctuation/space = chord
+    chordMap[char].forEach((note) => {
+      synth.triggerAttackRelease(note, "n");
+    });
   }
 });
 
-chaInterOffBtn.addEventListener("click", () => {
-  if (isInterOn) {
-    chaInterText.classList.add("hidden");
-    chaInterOffBtn.classList.add("active");
-    chaInterOnBtn.classList.remove("active");
-    chaSubTitle.classList.remove("hidden");
-    isInterOn = false;
+//--------------------------------------------------
+//Shuffle feature
+//--------------------------------------------------
+const shuffle = document.querySelector("#shuffle-btn");
+
+const wordList = [
+  "sound",
+  "note",
+  "music",
+  "synth",
+  "play",
+  "tone",
+  "keyboard",
+  "melody",
+  "harmony",
+  "rhythm",
+  "beat",
+  "chord",
+  "scale",
+  "tempo",
+  "pitch",
+  "volume",
+  "vibe",
+  "tune",
+  "octave",
+  "instrument",
+  "jam",
+  "loop",
+  "bass",
+  "drum",
+  "string",
+  "vocal",
+  "reverb",
+  "echo",
+  "pluck",
+  "strike",
+  "slide",
+  "arpeggio",
+  "crescendo",
+  "forte",
+  "piano",
+  "staccato",
+  "legato",
+  "resonance",
+  "ambient",
+  "digital",
+  "analog",
+  "modulate",
+  "filter",
+  "wave",
+  "sustain",
+  "decay",
+  "attack",
+];
+
+// Generate random words from the list
+function generateRandomWords(numWords) {
+  let result = "";
+  for (let i = 0; i < numWords; i++) {
+    const randomIndex = Math.floor(Math.random() * wordList.length);
+    result += wordList[randomIndex] + " ";
   }
+  return result.trim();
+}
+
+// Only populate textarea when shuffle button is clicked
+shuffle.addEventListener("click", () => {
+  const minWords = 3;
+  const maxWords = 20;
+  const numWords =
+    Math.floor(Math.random() * (maxWords - minWords + 1)) + minWords;
+
+  const randomText = generateRandomWords(numWords);
+  textBox.value = randomText;
 });
 
-const chaHoldText = document.querySelector("#chaHoldText");
-console.log(chaHoldText);
-const chaHoldTitle = document.querySelector("#chaHoldTitle");
-console.log(chaHoldTitle);
-const chaSubTitleHold = document.querySelector("#chaSubtextHold");
-console.log(chaSubTitleHold);
-const chaHoldOnBtn = document.querySelector("#onBtn2");
-console.log(chaHoldOnBtn);
-const chaHoldOffBtn = document.querySelector("#offBtn2");
-console.log(chaHoldOffBtn);
-const chaHoldspaceBox = document.querySelector("#characterContent .holdspace");
-console.log(chaHoldspaceBox);
+//--------------------------------------------------
+//Play feature
+//--------------------------------------------------
+const play = document.querySelector("#play-btn");
 
-let isHoldOn = false; // default state: text is hidden
+play.addEventListener("click", async () => {
+  const text = textBox.value;
 
-chaHoldOnBtn.addEventListener("click", () => {
-  if (!isHoldOn) {
-    chaHoldText.classList.remove("hidden");
-    chaHoldOnBtn.classList.add("active");
-    chaHoldOffBtn.classList.remove("active");
-    chaSubTitleHold.classList.add("hidden");
-    chaHoldspaceBox.classList.add("inverted");
-    isHoldOn = true;
-  }
-});
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
 
-chaHoldOffBtn.addEventListener("click", () => {
-  if (isHoldOn) {
-    chaHoldText.classList.add("hidden");
-    chaHoldOffBtn.classList.add("active");
-    chaHoldOnBtn.classList.remove("active");
-    chaSubTitleHold.classList.remove("hidden");
-    chaHoldspaceBox.classList.remove("inverted");
-    isHoldOn = false;
-  }
-});
-
-//-----------------------------------//
-// Feedback -------------------------//
-//-----------------------------------//
-
-const feedHoldBtn = document.querySelector("#feedHoldBtn");
-const feedHoldText = document.querySelector("#feedHoldText");
-const feedHoldClose = document.querySelector("#feedHoldClose");
-const feedHoldLoading = document.querySelector("#feedHoldLoading");
-const feedHoldspaceBox = document.querySelector("#feedbackContent .holdspace");
-
-const loadingFill = document.getElementById("loadingFill");
-const loadingText = document.getElementById("loadingText");
-
-feedHoldBtn.addEventListener("click", () => {
-  feedHoldBtn.classList.add("hidden");
-  feedHoldClose.classList.remove("hidden");
-
-  // Reset
-  loadingFill.style.width = "0%";
-  loadingText.textContent = "Loading 0%";
-  feedHoldLoading.classList.remove("hidden");
-
-  let percent = 0;
-  const loadingInterval = setInterval(() => {
-    percent++;
-    loadingFill.style.width = `${percent}%`;
-    loadingText.textContent = `Loading ${percent}%`;
-
-    if (percent >= 100) {
-      clearInterval(loadingInterval);
-      feedHoldLoading.classList.add("hidden");
-      feedHoldText.classList.remove("hidden");
-      feedHoldspaceBox.classList.add("inverted");
+    if (noteMapUpper[char]) {
+      synth.triggerAttackRelease(noteMapUpper[char], "8n");
+    } else if (noteMap[char]) {
+      synth.triggerAttackRelease(noteMap[char], "8n");
+    } else if (chordMap[char]) {
+      chordMap[char].forEach((note) => {
+        synth.triggerAttackRelease(note, "8n");
+      });
     }
-  }, 20); // ~2 seconds total (100 x 20ms = 2000ms)
-});
 
-feedHoldClose.addEventListener("click", () => {
-  feedHoldBtn.classList.remove("hidden");
-  feedHoldText.classList.add("hidden");
-  feedHoldspaceBox.classList.remove("inverted");
-  feedHoldClose.classList.add("hidden");
-  feedHoldLoading.classList.add("hidden");
-});
-
-const feedInterBtn = document.querySelector("#feedInterBtn");
-const feedInterText = document.querySelector("#feedInterText");
-const feedInterClose = document.querySelector("#feedInterClose");
-const feedInterLoading = document.querySelector("#feedInterLoading");
-
-const loadingFillInter = document.getElementById("loadingFillInter");
-const loadingTextInter = document.getElementById("loadingTextInter");
-
-feedInterBtn.addEventListener("click", () => {
-  feedInterBtn.classList.add("hidden");
-  feedInterClose.classList.remove("hidden");
-
-  // Reset
-  loadingFillInter.style.width = "0%";
-  loadingTextInter.textContent = "Loading 0%";
-  feedInterLoading.classList.remove("hidden");
-
-  let percent = 0;
-  const loadingInterval = setInterval(() => {
-    percent++;
-    loadingFillInter.style.width = `${percent}%`;
-    loadingTextInter.textContent = `Loading ${percent}%`;
-
-    if (percent >= 100) {
-      clearInterval(loadingInterval);
-      feedInterLoading.classList.add("hidden");
-      feedInterText.classList.remove("hidden");
-    }
-  }, 20); // ~2 seconds total (100 x 20ms = 2000ms)
-});
-
-feedInterClose.addEventListener("click", () => {
-  feedInterBtn.classList.remove("hidden");
-  feedInterText.classList.add("hidden");
-  feedInterClose.classList.add("hidden");
-  feedInterLoading.classList.add("hidden");
+    // Wait a short delay before next character
+    await new Promise((res) => setTimeout(res, 200)); // 200ms per letter
+  }
 });
