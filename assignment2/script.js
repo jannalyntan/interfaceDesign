@@ -3,6 +3,7 @@
 //--------------------------------------------------
 
 const synth = new Tone.Synth().toDestination();
+const now = Tone.now();
 
 const noteMap = {
   1: "C2",
@@ -202,4 +203,20 @@ play.addEventListener("click", async () => {
     // Wait a short delay before next character
     await new Promise((res) => setTimeout(res, 200)); // 200ms per letter
   }
+});
+
+//--------------------------------------------------
+//Pause feature
+//--------------------------------------------------
+const reset = document.querySelector("#reset-btn");
+
+reset.addEventListener("click", () => {
+  textBox.value = "";
+
+  if (textBox) {
+    textBox.innerHTML = "";
+  }
+
+  synth.triggerRelease(now);
+  Tone.stop();
 });

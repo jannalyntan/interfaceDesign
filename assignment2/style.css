@@ -6,6 +6,7 @@ body {
   gap: 10px;
   margin-left: 5%;
   margin-right: 5%;
+  margin-top: -5%;
 }
 
 /* ----------------------------------- */
@@ -24,4 +25,11 @@ button {
 textarea {
   padding: 10px;
   height: 300px;
+}
+
+.played {
+  color: red;
+}
+.not-played {
+  color: black;
 }
