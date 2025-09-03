@@ -211,12 +211,16 @@ play.addEventListener("click", async () => {
 const reset = document.querySelector("#reset-btn");
 
 reset.addEventListener("click", () => {
+  // 1. Clear the textbox
   textBox.value = "";
 
-  if (textBox) {
-    textBox.innerHTML = "";
+  // 2. Clear the displayed highlighted text (if using a container div)
+  if (textDisplay) {
+    textDisplay.innerHTML = "";
   }
 
-  synth.triggerRelease(now);
-  Tone.stop();
+  // 3. Stop all scheduled sounds
+  synth.releaseAll(); // quick way to stop held notes
+  Tone.Transport.stop(); // stop anything scheduled on the transport
+  Tone.Transport.cancel(); // clear future events
 });
