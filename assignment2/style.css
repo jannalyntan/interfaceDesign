@@ -2,7 +2,7 @@ body {
   height: 100vh;
   justify-content: center;
   gap: 10px;
-
+background-color: rgb(229, 223, 217);
   margin-top: 2%;
   font-family: "indivisible", sans-serif;
 }
@@ -18,17 +18,24 @@ button {
   font-size: large;
   font-weight: bolder;
   border: none;
-  background-color: white;
-  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+button:hover {
+  color: red;
+  scale: 1.1;
 }
 
 #play-pause {
   align-self: flex-end;
+  text-align: right;
+
 }
 
 textarea {
   padding: 10px;
   height: 300px;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .played {
@@ -45,6 +52,7 @@ textarea {
 #tab-groups {
   display: flex;
   justify-content: flex-end;
+margin-right: 3%;
 }
 
 hr {
