@@ -1,12 +1,10 @@
 body {
-  display: flex;
-  flex-direction: column;
   height: 100vh;
   justify-content: center;
   gap: 10px;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: -5%;
+
+  margin-top: 2%;
+  font-family: "indivisible", sans-serif;
 }
 
 /* ----------------------------------- */
@@ -16,6 +14,12 @@ body {
 button {
   padding: 10px;
   width: 100px;
+  font-family: "indivisible", sans-serif;
+  font-size: large;
+  font-weight: bolder;
+  border: none;
+  background-color: white;
+  text-align: left;
 }
 
 #play-pause {
@@ -32,4 +36,36 @@ textarea {
 }
 .not-played {
   color: black;
+}
+
+/* --------------------------------------- */
+/* tab groups----------------------------- */
+/* --------------------------------------- */
+
+#tab-groups {
+  display: flex;
+  justify-content: flex-end;
+}
+
+hr {
+  height: 2px;
+  background-color: black;
+  color: black;
+}
+
+#lineBreak {
+  background-color: black;
+  height: 1px;
+  margin-bottom: 50px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  font-family: "indivisible", sans-serif;
+  position: relative;
+  height: 70vh;
+  justify-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
 }
