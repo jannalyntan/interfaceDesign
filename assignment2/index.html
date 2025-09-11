@@ -4,38 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 2</title>
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://use.typekit.net/iof8vhy.css">
+    <link rel="stylesheet" href="https://use.typekit.net/iof8vhy.css" />
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/tone" defer></script>
     <script src="script.js" defer></script>
-    <script src="http://unpkg.com/tone"></script>
+  </head>
+
   <body>
+    <!-- Navigation -->
+    <nav id="tab-groups">
+      <button aria-label="Play tab">play.</button>
+      <button aria-label="About tab">about.</button>
+    </nav>
 
-   <div id="tab-groups">
-    <button>play.</button>
-    <button>about.</button>
-   </div>
-   
-   <div id="lineBreak"> <p></p>
-  </div>
+    <!-- Divider -->
+    <div id="lineBreak"><p></p></div>
 
-  <section>
-    <button id="shuffle-btn">generate.</button>
-    <textarea
-      name="textbox"
-      id="textbox"
-      rows="10"
-      cols="50"
-      placeholder="Type here..."
-    ></textarea>
+    <!-- Main interaction -->
+    <section>
+      <button id="shuffle-btn">generate.</button>
+      <textarea
+        name="textbox"
+        id="textbox"
+        rows="10"
+        cols="50"
+        placeholder="Type here..."
+      ></textarea>
 
-    <div id="play-pause">
-  <button id="reset-btn">reset.</button>
-    <button id="play-btn">play.</button>
-    </div>
-  </section>
-
-
+      <div id="play-pause">
+        <button id="reset-btn">reset.</button>
+        <button id="play-btn">play.</button>
+      </div>
+    </section>
   </body>
 </html>

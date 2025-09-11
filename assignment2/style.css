@@ -2,9 +2,9 @@ body {
   height: 100vh;
   justify-content: center;
   gap: 10px;
-background-color: rgb(229, 223, 217);
+  background-color: rgb(181, 190, 181);
   margin-top: 2%;
-  font-family: "indivisible", sans-serif;
+  font-family: "cofo-raffine", sans-serif;
 }
 
 /* ----------------------------------- */
@@ -14,8 +14,8 @@ background-color: rgb(229, 223, 217);
 button {
   padding: 10px;
   width: 100px;
-  font-family: "indivisible", sans-serif;
-  font-size: large;
+  font-family: "cofo-raffine", sans-serif;
+  font-size: 30px;
   font-weight: bolder;
   border: none;
   background-color: rgba(0, 0, 0, 0);
@@ -29,7 +29,6 @@ button:hover {
 #play-pause {
   align-self: flex-end;
   text-align: right;
-
 }
 
 textarea {
@@ -42,7 +41,7 @@ textarea {
   color: red;
 }
 .not-played {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 /* --------------------------------------- */
@@ -52,7 +51,7 @@ textarea {
 #tab-groups {
   display: flex;
   justify-content: flex-end;
-margin-right: 3%;
+  margin-right: 3%;
 }
 
 hr {
@@ -70,7 +69,7 @@ hr {
 section {
   display: flex;
   flex-direction: column;
-  font-family: "indivisible", sans-serif;
+  font-family: "cofo-raffine", sans-serif;
   position: relative;
   height: 70vh;
   justify-content: center;
