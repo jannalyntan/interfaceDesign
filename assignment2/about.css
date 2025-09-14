@@ -50,3 +50,27 @@ section {
   margin-left: 5%;
   margin-right: 5%;
 }
+
+
+
+
+.sidebyside {
+  display: flex;
+
+  align-items: center;
+  gap: 50px;
+}
+
+
+.left {
+  text-align: left;
+  align-items: left;
+  flex: 1;
+}
+
+.right {
+  align-items: right;
+  text-align: right;
+  margin: 5%;
+  flex: 1;
+}

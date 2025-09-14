@@ -134,11 +134,11 @@ const noteMapUpper = {
 //--------------------------------------------------
 // Overlay
 //--------------------------------------------------
-const textBox = document.querySelector("textarea");
+const textArea = document.querySelector("textarea");
 const textDisplay = document.querySelector("#textDisplay");
 
-textBox.addEventListener("input", () => {
-  textDisplay.textContent = textBox.value;
+textArea.addEventListener("input", () => {
+  textDisplay.textContent = textArea.value;
 });
 
 //--------------------------------------------------
@@ -155,16 +155,22 @@ function playChar(char) {
 }
 
 function syncDisplay(highlightIndex = -1) {
-  // converts the text into its own html element
-  const text = textBox.value;
+
+// Get the current text from the textarea
+  const text = textArea.value;
+
+    // Clear previous content in the overlay
   textDisplay.innerHTML = "";
 
   for (let i = 0; i < text.length; i++) {
-    //creating a span for each letter
+       // Create a span element for the current character
     const span = document.createElement("span");
     span.textContent = text[i];
 
-    //when the letter is being played..
+    // Add the span to the textDisplay overlay 
+    textDisplay.appendChild(span);
+
+    //when the letter is being played...
     if (i === highlightIndex) {
       span.style.color = "#535923";
       span.style.fontWeight = "bold";
@@ -173,8 +179,6 @@ function syncDisplay(highlightIndex = -1) {
       span.style.color = "#555";
     }
 
-    //creating a span for each letter
-    textDisplay.appendChild(span);
   }
 }
 
@@ -187,7 +191,7 @@ let isPlaying = false;
 
 play.addEventListener("click", async () => {
   isPlaying = true;
-  const text = textBox.value;
+  const text = textArea.value;
 
   for (let i = 0; i < text.length; i++) {
     if (!isPlaying) break;
@@ -211,7 +215,7 @@ const reset = document.querySelector("#reset-btn");
 
 // Reset button
 reset.addEventListener("click", () => {
-  textBox.value = "";
+  textArea.value = "";
   textDisplay.innerHTML = "";
   synth.releaseAll();
   Tone.Transport.stop();
@@ -223,7 +227,7 @@ reset.addEventListener("click", () => {
 //--------------------------------------------------
 // Typing Feature
 //--------------------------------------------------
-textBox.addEventListener("input", (e) => {
+textArea.addEventListener("input", (e) => {
   const char = e.data;
   playChar(char);
   syncDisplay();
@@ -259,6 +263,6 @@ const textList = [
 
 shuffle.addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * textList.length);
-  textBox.value = textList[randomIndex];
+  textArea.value = textList[randomIndex];
   syncDisplay();
 });
