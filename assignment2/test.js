@@ -132,39 +132,17 @@ const noteMapUpper = {
 };
 
 //--------------------------------------------------
-// DOM Elements
+// Overlay
 //--------------------------------------------------
 const textBox = document.querySelector("textarea");
+const textDisplay = document.querySelector("#textDisplay");
 
-// Create highlight display
-const textDisplay = document.createElement("div");
-textDisplay.classList.add("highlight-display");
-textBox.parentNode.insertBefore(textDisplay, textBox);
-
-// Match size & style of textarea
-Object.assign(textDisplay.style, {
-  position: "absolute",
-  top: textBox.offsetTop + "px",
-  left: textBox.offsetLeft + "px",
-  width: textBox.offsetWidth + "px",
-  height: textBox.offsetHeight + "px",
-  whiteSpace: "pre-wrap",
-  overflowWrap: "break-word",
-  font: "Intel One Mono",
-  color: "#555",
-  pointerEvents: "none",
-  padding: "20px",
-  boxSizing: "border-box",
+textBox.addEventListener("input", () => {
+  textDisplay.textContent = textBox.value;
 });
 
-// Make textarea transparent but still usable
-textBox.style.position = "relative";
-textBox.style.background = "transparent";
-textBox.style.color = "transparent";
-textBox.style.caretColor = "black";
-
 //--------------------------------------------------
-// Helpers
+// Display Text
 //--------------------------------------------------
 function playChar(char) {
   if (noteMapUpper[char]) {
@@ -177,12 +155,16 @@ function playChar(char) {
 }
 
 function syncDisplay(highlightIndex = -1) {
+  // converts the text into its own html element
   const text = textBox.value;
   textDisplay.innerHTML = "";
 
   for (let i = 0; i < text.length; i++) {
+    //creating a span for each letter
     const span = document.createElement("span");
     span.textContent = text[i];
+
+    //when the letter is being played..
     if (i === highlightIndex) {
       span.style.color = "#535923";
       span.style.fontWeight = "bold";
@@ -190,9 +172,53 @@ function syncDisplay(highlightIndex = -1) {
     } else {
       span.style.color = "#555";
     }
+
+    //creating a span for each letter
     textDisplay.appendChild(span);
   }
 }
+
+//--------------------------------------------------
+// Play Feature
+//--------------------------------------------------
+const play = document.querySelector("#play-btn");
+
+let isPlaying = false;
+
+play.addEventListener("click", async () => {
+  isPlaying = true;
+  const text = textBox.value;
+
+  for (let i = 0; i < text.length; i++) {
+    if (!isPlaying) break;
+
+    const char = text[i];
+    playChar(char);
+    syncDisplay(i);
+
+    await new Promise((res) => setTimeout(res, 200));
+  }
+
+  // reset highlight when done
+  syncDisplay();
+  isPlaying = false;
+});
+
+//--------------------------------------------------
+// Reset Feature
+//--------------------------------------------------
+const reset = document.querySelector("#reset-btn");
+
+// Reset button
+reset.addEventListener("click", () => {
+  textBox.value = "";
+  textDisplay.innerHTML = "";
+  synth.releaseAll();
+  Tone.Transport.stop();
+  Tone.Transport.cancel();
+
+  isPlaying = false; // stop play loop
+});
 
 //--------------------------------------------------
 // Typing Feature
@@ -235,46 +261,4 @@ shuffle.addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * textList.length);
   textBox.value = textList[randomIndex];
   syncDisplay();
-});
-
-//--------------------------------------------------
-// Play Feature
-//--------------------------------------------------
-const play = document.querySelector("#play-btn");
-
-let isPlaying = false; // global flag
-
-play.addEventListener("click", async () => {
-  isPlaying = true;
-  const text = textBox.value;
-
-  for (let i = 0; i < text.length; i++) {
-    if (!isPlaying) break; // stop if reset clicked
-
-    const char = text[i];
-    playChar(char);
-    syncDisplay(i);
-
-    await new Promise((res) => setTimeout(res, 200));
-  }
-
-  // reset highlight when done
-  syncDisplay();
-  isPlaying = false;
-});
-
-//--------------------------------------------------
-// Reset Feature
-//--------------------------------------------------
-const reset = document.querySelector("#reset-btn");
-
-// Reset button
-reset.addEventListener("click", () => {
-  textBox.value = "";
-  textDisplay.innerHTML = "";
-  synth.releaseAll();
-  Tone.Transport.stop();
-  Tone.Transport.cancel();
-
-  isPlaying = false; // stop play loop
 });

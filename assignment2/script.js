@@ -128,10 +128,11 @@ const noteMapUpper = {
   Z: "G#7",
 };
 
-const textBox = document.querySelector("textarea");
-console.log(textBox);
+const textArea = document.querySelector("textarea");
+console.log(textArea);
+
 // Play note or chord on key input
-textBox.addEventListener("input", (e) => {
+textArea.addEventListener("input", (e) => {
   const char = e.data; // last typed character
 
   if (noteMapUpper[char]) {

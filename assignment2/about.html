@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="about.css" />
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/tone" defer></script>
+    <!-- <script src="script.js" defer></script> -->
+    <script src="test.js" defer></script>
+  </head>
+
+  <body>
+    <section class="container">
+      <!-- Navigation -->
+      <nav id="tab-groups">
+        <button
+          class="tab-groups"
+          id="Play"
+          onclick="window.location.href='index.html'"
+        >
+          play.
+        </button>
+        <button
+          class="tab-groups"
+          id="About"
+          onclick="window.location.href='about.html'"
+        >
+          about.
+        </button>
+      </nav>
+
+      <div>
+        <h1>Project Conceptualisation</h1>
+        <p>
+          My project explores the transformation of typing, a common, everyday
+          computer interaction, into audio cues. Using novel input techniques to
+          convert text into sound. The concept was inspired by TikTok videos in
+          which users generate unique sounds from their names. From there I
+          began imagining what my own name would sound like and then expanded
+          this into the broader design inquiry: “What will this text sound
+          like?”
+
+          <br /><br />I developed an interaction where users can type words and
+          immediately hear corresponding sounds, effectively turning simple text
+          into short, dynamic audio pieces. Because the project is primarily
+          text-driven, I deliberately designed a minimalist and clean layout to
+          ensure that sound remains the primary focus. I researched a variety of
+          website styles, particularly those emphasizing typography and clarity,
+          and initially planned to replicate a similarly structured aesthetic.
+
+          <br /><br />However, during development, I realized that my initial
+          design didn’t quite match the generated sounds. I began experimenting
+          with both the visuals and the audio to make them feel more aligned.
+          While exploring different options, I noticed that the audio resembled
+          wind chimes, which inspired a shift toward a Zen-like visual style. I
+          kept the layout minimal so the audio could guide the visual
+          atmosphere. This approach ensured that the interaction stayed focused
+          on the auditory experience rather than relying on symbols or complex
+          graphics, creating a cohesive and conceptually consistent UI.
+        </p>
+      </div>
+
+      <div>
+        <h1>Technical Conceptualisation</h1>
+
+        <p>
+          For the advanced techniques, I implemented a “generate” button using
+          Math.random(). When clicked, it selects a word at random from a
+          predefined list, which fits naturally into the interaction and goes
+          well with my desired interaction.
+        </p>
+
+        <p>
+          The system’s core interactions, implemented using JavaScript and
+          Tone.js, include:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Sound While Typing</strong> – each keystroke triggers a
+            corresponding note.
+          </li>
+          <li>
+            <strong>Play Button Playback</strong> – sequentially plays all
+            letters typed.
+          </li>
+          <li>
+            <strong>Visual Tracking of Letters</strong> – highlights the current
+            character being played in real time.
+          </li>
+        </ul>
+
+        <p>
+          To support these interactions, I mapped the keyboard so that each
+          letter and symbol corresponded to a distinct note. Symbols such as
+          periods or spaces were mapped to chords, expanding the musical
+          possibilities. Uppercase letters were mapped as sharps of their
+          lowercase equivalents, increasing the variety of sounds.
+        </p>
+
+        <p>
+          <strong>Interaction 1: Sound While Typing</strong><br />
+          This interaction was implemented using an input event listener on the
+          &lt;textarea&gt;. When the user types, Tone.js’s
+          <code>triggerAttackRelease</code> method plays the corresponding note.
+          While technically straightforward, this required mapping of characters
+          to musical notes to ensure the sound fit better with the page’s
+          aesthetic.
+        </p>
+
+        <p>
+          <strong>Interaction 2: Play Button Playback</strong><br />
+          This interaction was implemented by iterating through all the
+          characters in the text area and playing each one using
+          <code>triggerAttackRelease</code>. Each character is read in sequence,
+          triggering the corresponding note or chord. This allows the text to be
+          “sounded out” in real time while optionally highlighting the current
+          character for visual feedback.
+        </p>
+
+        <p>
+          <strong>Interaction 3: Visual Tracking of Letters</strong><br />
+          This interaction presented a technical challenge. Standard
+          &lt;textarea&gt; elements do not allow per-character styling, so I
+          implemented a layered solution: each typed character was mirrored as a
+          separate &lt;span&gt; within an overlapping &lt;div&gt;. This enabled
+          real-time tracking and synchronization of visual with audio playback.
+        </p>
+
+        <p>
+          Initially, I used a standard &lt;input&gt; field for typing and
+          highlighting. However, this approach failed because input fields
+          cannot style individual characters. Hence, I tried the overlay option.
+          With this implementation, each character could be individually
+          highlighted as it played, providing clear visual feedback that
+          reinforces the auditory experience.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
