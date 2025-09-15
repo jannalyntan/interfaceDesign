@@ -155,30 +155,28 @@ function playChar(char) {
 }
 
 function syncDisplay(highlightIndex = -1) {
-
-// Get the current text from the textarea
+  // Get the current text from the textarea
   const text = textArea.value;
 
-    // Clear previous content in the overlay
+  // Clear previous content in the overlay
   textDisplay.innerHTML = "";
 
   for (let i = 0; i < text.length; i++) {
-       // Create a span element for the current character
+    // Create a span element for the current character
     const span = document.createElement("span");
     span.textContent = text[i];
 
-    // Add the span to the textDisplay overlay 
+    // Add the span to the textDisplay overlay
     textDisplay.appendChild(span);
 
     //when the letter is being played...
     if (i === highlightIndex) {
-      span.style.color = "#535923";
+      span.style.color = "#fff3d8";
       span.style.fontWeight = "bold";
       span.style.fontSize = "larger";
     } else {
-      span.style.color = "#555";
+      span.style.color = "white";
     }
-
   }
 }
 
