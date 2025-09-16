@@ -73,7 +73,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 70vh;
+  padding: 40px;
   justify-content: center;
   margin-left: 5%;
   margin-right: 5%;
@@ -128,13 +128,6 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 30px;
-}
-
-.background {
-  background-color: rgba(186, 191, 149, 0.25);
-  padding: 35px;
-  width: 30%;
-  border-radius: 20px;
 }
 
 /* --------------------------------------- */
