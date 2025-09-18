@@ -17,15 +17,19 @@
     <link rel="stylesheet" href="about.css" />
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/tone" defer></script>
-    <!-- <script src="script.js" defer></script> -->
     <script src="about.js" defer></script>
   </head>
 
   <body>
     <section class="content">
       <div id="heading">
-        <button style="margin-top: 90px">go to project.</button>
+        <a
+          href="https://jannalyntan.github.io/interfaceDesign/assignment2/"
+          target="_blank"
+        >
+          <button style="margin-top: 90px">go to project.</button>
+        </a>
+
         <h1 style="font-size: 180px; margin-top: -50px">
           Assingment 2 Reflection
         </h1>
@@ -35,8 +39,10 @@
           <button class="project" id="projectBtn">
             project conceptualisation.
           </button>
-          <button class="project">technical conceptualisation.</button>
-          <button class="project">peer review.</button>
+          <button class="project" id="techBtn">
+            technical conceptualisation.
+          </button>
+          <button class="project" id="peerBtn">user testing.</button>
         </div>
       </div>
 
@@ -315,23 +321,42 @@
         interface.
       </p>
 
-      <h1>Next steps...</h1>
-      <p>
-        In conclusion, this project has taught me a great deal about working
-        with Tone.js and designing interactions around sound. It challenged me
-        to transform a simple idea into a full website experience and encouraged
-        me to think creatively when solving technical challenges, such as the
-        textarea highlight issue. Through this process, I developed a better
-        understanding of how sound, visuals, and user interactions can work
-        together to create an immersive and cohesive experience.
-        <br />
-        <br />
-        Looking ahead, my next steps are to refine the website based on peer
-        feedback, improving clarity and usability of the interface. I also aim
-        to explore new interactive features, such as animating the background
-        ripple in response to the sounds being played, which would enhance the
-        immersive and calming atmosphere of the project.
-      </p>
+      <div id="summary" class="sidebyside">
+        <h1 class="left">In Conclusion...</h1>
+        <p class="right">
+          this project has taught me a great deal about working with Tone.js and
+          designing interactions around sound. It challenged me to transform a
+          simple idea into a full website experience and encouraged me to think
+          creatively when solving technical challenges, such as the textarea
+          highlight issue. Through this process, I developed a better
+          understanding of how sound, visuals, and user interactions can work
+          together to create an immersive and cohesive experience.
+          <br />
+          <br />
+          Looking ahead, my next steps are to refine the website based on peer
+          feedback, improving clarity and usability of the interface. I also aim
+          to explore new interactive features, such as animating the background
+          ripple in response to the sounds being played, which would enhance the
+          immersive and calming atmosphere of the project.
+        </p>
+      </div>
+
+      <button id="backTopBtn" style="margin-top: 50px">back to top.</button>
+
+      <div id="ending">
+        <p>jump back</p>
+        <div class="sidebyside">
+          <button class="project" id="projectBtn1">
+            project conceptualisation.
+          </button>
+          <button class="project" id="techBtn1">
+            technical conceptualisation.
+          </button>
+          <button class="project" id="peerBtn1">user testing.</button>
+        </div>
+
+        <p class="subtext" id="name">Jannalyn Tan- s4056775</p>
+      </div>
     </section>
   </body>
 </html>

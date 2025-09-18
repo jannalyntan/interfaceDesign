@@ -9,12 +9,19 @@ p {
   margin-right: 10%;
 }
 
+h2 {
+  color: #535923;
+}
+
+img {
+  border-radius: 10px;
+}
 /* ----------------------------------- */
-/* button----------------------------- */
+/* Heading----------------------------- */
 /* ----------------------------------- */
 
 #heading {
-  height: 30vh;
+  height: 100vh;
   width: 100vw;
   background-image: url(images/background-texture.png);
   color: white;
@@ -28,11 +35,23 @@ p {
 
 #heading button {
   color: white;
+  background-color: #535923;
+  border-radius: 15px;
+  padding: 15px 25px 15px 25px;
+}
+
+#heading button:hover {
+  color: white;
+  scale: 1.1;
 }
 
 #heading .sidebyside {
   justify-content: center;
 }
+
+/* ----------------------------------- */
+/* Button----------------------------- */
+/* ----------------------------------- */
 
 button {
   padding: 10px;
@@ -48,35 +67,6 @@ button {
 button:hover {
   color: black;
   scale: 1.1;
-}
-
-/* --------------------------------------- */
-/* tab groups----------------------------- */
-/* --------------------------------------- */
-
-#tab-groups {
-  position: absolute;
-  top: 8px;
-  right: 1px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: flex-end;
-  font-weight: lighter;
-  gap: 13px;
-}
-
-.tab-groups {
-  font-size: 25px;
-}
-
-#Navigation {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  padding: 40px;
-  justify-content: center;
-  margin-left: 5%;
-  margin-right: 5%;
 }
 
 /* --------------------------------------- */
@@ -128,6 +118,7 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 30px;
+  color: white;
 }
 
 /* --------------------------------------- */
@@ -170,4 +161,95 @@ button:hover {
 /*to return the img to original state*/
 .hoverover:hover:after {
   opacity: 1;
+}
+
+/* --------------------------------------- */
+/* Others -------------------------------- */
+/* --------------------------------------- */
+
+#projectCon,
+#techCon,
+#userTesting {
+  font-size: 180px;
+  color: #535923;
+}
+
+.background {
+  background-image: url(images/background-texture.png);
+  padding: 50px;
+  border-radius: 15px;
+}
+
+.background2 {
+  background-image: url(images/background-texture.png);
+  width: 600px;
+  height: 200px;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#summary {
+  background-color: #535923;
+  padding: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 15px;
+  color: white;
+  margin-top: 50px;
+}
+
+#summary h1 {
+  font-size: 50px;
+}
+
+#summary p {
+  text-align: right;
+}
+
+/* ----------------------------------- */
+/* Ending----------------------------- */
+/* ----------------------------------- */
+
+#ending {
+  margin-top: 100px;
+  height: 30vh;
+  width: 100vw;
+  background-image: url(images/background-texture.png);
+  color: white;
+  position: relative;
+  text-align: center;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#ending button {
+  color: white;
+  background-color: #535923;
+  border-radius: 15px;
+  padding: 15px 25px 15px 25px;
+}
+
+#ending button:hover {
+  color: white;
+  scale: 1.1;
+}
+
+#ending .sidebyside {
+  justify-content: center;
+}
+
+#name {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
 }
