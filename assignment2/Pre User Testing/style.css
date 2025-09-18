@@ -47,6 +47,20 @@ button:hover {
 /* tab groups----------------------------- */
 /* --------------------------------------- */
 
+#tab-groups {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: lighter;
+}
+
+.tab-groups {
+  font-size: 25px;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -62,7 +76,7 @@ section {
 /* --------------------------------------- */
 
 #mainInteraction {
-  margin-top: 140px;
+  margin-top: 250px;
 }
 
 #play-pause {
