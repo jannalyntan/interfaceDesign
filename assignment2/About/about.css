@@ -139,6 +139,7 @@ button:hover {
 
 .hoverover:hover {
   background-color: #535923;
+  border-radius: 10px;
 }
 
 .hoverover:hover img {
@@ -156,6 +157,7 @@ button:hover {
   position: absolute;
   opacity: 0;
   transition: opacity 0.15s ease-in-out;
+  border-radius: 15px;
 }
 
 /*to return the img to original state*/
