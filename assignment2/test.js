@@ -2,21 +2,20 @@
 //Letter to Audio
 //--------------------------------------------------
 
-// Create a soft, zen-like synth
+// Audio
 const synth = new Tone.PolySynth(Tone.Synth, {
-  oscillator: { type: "sine" }, // smooth & calm
+  oscillator: { type: "sine" }, 
   envelope: {
-    attack: 1, // slow fade in
+    attack: 1, 
     decay: 1,
-    sustain: 0.6, // holds a soft tone
-    release: 4, // slow fade out
+    sustain: 0.6,
+    release: 4, 
   },
 });
 
-// Add gentle reverb for spacious feel
 const reverb = new Tone.Reverb({
-  decay: 8, // long airy tail
-  wet: 0.4, // blend in
+  decay: 8, 
+  wet: 0.4, 
 }).toDestination();
 
 synth.connect(reverb);
