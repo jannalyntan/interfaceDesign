@@ -4,18 +4,18 @@
 
 // Audio
 const synth = new Tone.PolySynth(Tone.Synth, {
-  oscillator: { type: "sine" }, 
+  oscillator: { type: "sine" },
   envelope: {
-    attack: 1, 
+    attack: 1,
     decay: 1,
     sustain: 0.6,
-    release: 4, 
+    release: 4,
   },
 });
 
 const reverb = new Tone.Reverb({
-  decay: 8, 
-  wet: 0.4, 
+  decay: 8,
+  wet: 0.4,
 }).toDestination();
 
 synth.connect(reverb);
@@ -196,6 +196,7 @@ play.addEventListener("click", async () => {
     const char = text[i];
     playChar(char);
     syncDisplay(i);
+    triggerRandomRipple(); // 🌊 animate ripples
 
     await new Promise((res) => setTimeout(res, 200));
   }
@@ -263,3 +264,26 @@ shuffle.addEventListener("click", () => {
   textArea.value = textList[randomIndex];
   syncDisplay();
 });
+
+//--------------------------------------------------
+// Ripples
+//--------------------------------------------------
+
+// Get all ripple containers
+const rippleGroups = document.querySelectorAll(
+  "#ripple-1,#ripple-2,.ripple-3,.ripple-1,.ripple-1, "
+);
+console.log(rippleGroups);
+
+function triggerRandomRipple() {
+  const randomIndex = Math.floor(Math.random() * rippleGroups.length);
+  const chosenRipple = rippleGroups[randomIndex];
+
+  // Add class to trigger animation
+  chosenRipple.classList.add("active");
+
+  // Remove it after animation ends so it can trigger again next time
+  setTimeout(() => {
+    chosenRipple.classList.remove("active");
+  }, 800); // match animation duration
+}
