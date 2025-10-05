@@ -196,7 +196,10 @@ play.addEventListener("click", async () => {
     const char = text[i];
     playChar(char);
     syncDisplay(i);
-    triggerRandomRipple(); // 🌊 animate ripples
+
+    if (Math.random() < 0.5) {
+      triggerRandomRipple();
+    }
 
     await new Promise((res) => setTimeout(res, 200));
   }
@@ -270,9 +273,7 @@ shuffle.addEventListener("click", () => {
 //--------------------------------------------------
 
 // Get all ripple containers
-const rippleGroups = document.querySelectorAll(
-  "#ripple-1,#ripple-2,.ripple-3,.ripple-1,.ripple-1, "
-);
+const rippleGroups = document.querySelectorAll(".ripple-container");
 console.log(rippleGroups);
 
 function triggerRandomRipple() {
@@ -280,10 +281,12 @@ function triggerRandomRipple() {
   const chosenRipple = rippleGroups[randomIndex];
 
   // Add class to trigger animation
+  chosenRipple.classList.remove("hidden");
   chosenRipple.classList.add("active");
 
   // Remove it after animation ends so it can trigger again next time
   setTimeout(() => {
+    chosenRipple.classList.add("hidden");
     chosenRipple.classList.remove("active");
-  }, 800); // match animation duration
+  }, 4000); // match animation duration
 }

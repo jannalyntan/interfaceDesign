@@ -27,20 +27,37 @@ body {
 /* ----------------------------------- */
 
 button {
-  padding: 10px;
-  width: 100px;
+  margin: 15px;
+  padding: 8px;
+  width: 200px;
   font-size: 30px;
   font-family: "Bodoni Moda", serif;
   color: white;
   font-weight: bolder;
   border: none;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(186, 191, 149, 0.1);
+  border-radius: 25px;
 }
 
+#shuffle-btn {
+  margin-left: -5px;
+}
+
+#play-btn {
+  width: 130px;
+  margin-right: -5px;
+}
+
+#reset-btn {
+  width: 130px;
+  margin-right: -5px;
+}
 button:hover {
   color: #fff3d8;
-  scale: 1.2;
   cursor: pointer;
+  scale: 1.1;
+  background-color: rgba(186, 191, 149, 0.2);
+  border: 1px solid #fff3d8; /* proper border */
 }
 
 /* --------------------------------------- */
@@ -200,25 +217,24 @@ textarea::placeholder {
   transform: translate(-50%, -50%);
   object-fit: cover;
   opacity: 0.4;
-  animation: ripplePulse 6s ease-out infinite;
+  /* animation: ripplePulse 5s ease-out; */
 }
 
 /* Circle size variation for ripple effect */
 .ripple-circle:nth-child(1) {
   width: 450px;
-  animation-delay: 1.5s;
+  animation-delay: 0.6s;
 }
 .ripple-circle:nth-child(2) {
   width: 350px;
-  animation-delay: 1s;
+  animation-delay: 0.4s;
 }
 .ripple-circle:nth-child(3) {
   width: 250px;
-  animation-delay: 0.5s;
+  animation-delay: 0.2s;
 }
 .ripple-circle:nth-child(4) {
   width: 150px;
-  animation-delay: 0s;
 }
 
 /* Simple pulse ripple animation */
@@ -227,7 +243,7 @@ textarea::placeholder {
     transform: translate(-50%, -50%) scale(1);
     opacity: 0;
   }
-  50% {
+  15% {
     transform: translate(-50%, -50%) scale(1.15);
     opacity: 0.5;
   }
@@ -238,5 +254,9 @@ textarea::placeholder {
 }
 
 .active {
-  animation: ripplePulse 0.8s ease-out;
+  animation: ripplePulse 4s ease-out;
+}
+
+.hidden {
+  display: none;
 }
