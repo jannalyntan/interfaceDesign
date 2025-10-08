@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/tone" defer></script>
+    <!-- <script src="script.js" defer></script> -->
+    <script src="test.js" defer></script>
+  </head>
+
+  <body>
+    <img src="About/images/background.png" alt="background" id="background" />
+    
+      <!-- Main interaction -->
+      <section id="mainInteraction">
+        <button id="shuffle-btn">generate.</button>
+
+        <div class="text-wrapper">
+          <div id="textDisplay" class="highlight-display"></div>
+          <textarea placeholder="type here..."></textarea>
+        </div>
+
+        <div id="play-pause">
+          <button id="reset-btn">reset.</button>
+          <button id="play-btn">play.</button>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>
