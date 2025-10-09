@@ -48,6 +48,12 @@ button {
   margin-right: -5px;
 }
 
+.focus {
+  outline: none; /* remove default browser ring */
+  background-color: rgba(186, 191, 149, 0.5);
+  box-shadow: 0 0 15px rgba(186, 191, 149, 0.6);
+}
+
 #reset-btn {
   width: 130px;
   margin-right: -5px;
@@ -142,6 +148,20 @@ textarea::placeholder {
   pointer-events: none;
   z-index: 0;
   opacity: 0.5;
+}
+
+/* Base ripple container */
+.ripple-container2 {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+  transition: opacity 1s ease-in-out;
+}
+
+.ripple-container2.hidden {
+  opacity: 0;
 }
 
 /* Positioning the 5 clusters */

@@ -137,7 +137,13 @@ const textArea = document.querySelector("textarea");
 const textDisplay = document.querySelector("#textDisplay");
 
 textArea.addEventListener("input", () => {
-  textDisplay.textContent = textArea.value;
+  if (textArea.value.trim().length > 0) {
+    // If there's text, add the focus/active styling
+    play.classList.add("focus");
+  } else {
+    // If empty, remove it
+    play.classList.remove("focus");
+  }
 });
 
 //--------------------------------------------------
@@ -196,6 +202,7 @@ play.addEventListener("click", async () => {
     const char = text[i];
     playChar(char);
     syncDisplay(i);
+    play.classList.remove("focus");
 
     if (Math.random() < 0.5) {
       triggerRandomRipple();
@@ -207,6 +214,12 @@ play.addEventListener("click", async () => {
   // reset highlight when done
   syncDisplay();
   isPlaying = false;
+
+  setTimeout(() => {
+    stillRippleGroups.forEach((el) => {
+      el.classList.remove("hidden");
+    });
+  }, 3000); // match animation duration
 });
 
 //--------------------------------------------------
@@ -221,6 +234,7 @@ reset.addEventListener("click", () => {
   synth.releaseAll();
   Tone.Transport.stop();
   Tone.Transport.cancel();
+  play.classList.remove("focus");
 
   isPlaying = false; // stop play loop
 });
@@ -235,7 +249,7 @@ textArea.addEventListener("input", (e) => {
 });
 
 //--------------------------------------------------
-// Shuffle Feature
+// Generate Feature
 //--------------------------------------------------
 const shuffle = document.querySelector("#shuffle-btn");
 
@@ -266,6 +280,7 @@ shuffle.addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * textList.length);
   textArea.value = textList[randomIndex];
   syncDisplay();
+  play.classList.add("focus");
 });
 
 //--------------------------------------------------
@@ -276,17 +291,26 @@ shuffle.addEventListener("click", () => {
 const rippleGroups = document.querySelectorAll(".ripple-container");
 console.log(rippleGroups);
 
+const stillRippleGroups = document.querySelectorAll(".ripple-container2");
+console.log(stillRippleGroups);
+
 function triggerRandomRipple() {
   const randomIndex = Math.floor(Math.random() * rippleGroups.length);
   const chosenRipple = rippleGroups[randomIndex];
 
-  // Add class to trigger animation
+  // Skip if already animating
+  if (chosenRipple.classList.contains("active")) return;
+
+  // Hide still ripples
+  stillRippleGroups.forEach((el) => el.classList.add("hidden"));
+
+  // Trigger ripple
   chosenRipple.classList.remove("hidden");
   chosenRipple.classList.add("active");
 
-  // Remove it after animation ends so it can trigger again next time
+  // End animation
   setTimeout(() => {
-    chosenRipple.classList.add("hidden");
     chosenRipple.classList.remove("active");
-  }, 4000); // match animation duration
+    chosenRipple.classList.add("hidden");
+  }, 4000);
 }
