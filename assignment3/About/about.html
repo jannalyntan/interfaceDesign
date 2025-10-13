@@ -30,8 +30,8 @@
           <button style="margin-top: 90px">go to project.</button>
         </a>
 
-        <h1 style="font-size: 180px; margin-top: -50px">
-          Assingment 2 Reflection
+        <h1 style="font-size: 180px; margin-top: -50px; color: white">
+          Assingment 3 Reflection
         </h1>
 
         <p style="margin-top: -100px">skip to</p>
@@ -46,155 +46,66 @@
         </div>
       </div>
 
-      <h1 id="projectCon">Project Conceptualisation</h1>
-      <p style="margin-top: -100px">
-        My project explores the transformation of typing, a common, everyday
-        computer interaction, into audio cues. Using
-        <span style="font-weight: bold">novel input </span>techniques to convert
-        text into sound. The concept was inspired by TikTok videos in which
-        users generate unique sounds from their names. From there I began
-        imagining what my own name would sound like and then expanded this into
-        the broader design inquiry: “What will this text sound like?”
-      </p>
-
-      <a
-        href="https://www.tiktok.com/@ben_makes_names_to_music/video/6945646958623132933?is_from_webapp=1&sender_device=pc"
-        target="_blank"
-      >
-        <button>link to tiktok.</button>
-      </a>
-
-      <div class="sidebyside">
-        <p class="left">
-          I developed an interaction where users can type words and immediately
-          hear corresponding sounds, effectively turning simple text into short,
-          dynamic audio pieces. Because the project is primarily text-driven, I
-          deliberately designed a minimalist and clean layout to ensure that
-          sound remains the primary focus. I researched a variety of website
-          styles, particularly those emphasizing typography and clarity, and
-          initially planned to replicate a similarly structured aesthetic.
-        </p>
-
-        <div class="right">
-          <img
-            src="images/reference-1.png"
-            alt="reference-1"
-            style="width: 700px"
-          />
-          <p class="subtext" style="margin-top: -20px">
-            Previous reference board <br />
-            Images from Pinterest
-          </p>
-        </div>
-      </div>
-
-      <div class="sidebyside">
-        <div class="left">
-          <img
-            src="images/reference-2.png"
-            alt="reference-1"
-            style="width: 700px"
-          />
-          <p class="subtext">
-            Reference board <br />
-            Images from Pinterest
-          </p>
-        </div>
-
-        <p class="right">
-          However, during development, I realized that my initial design didn’t
-          quite match the generated sounds. I began experimenting with both the
-          visuals and the audio to make them feel more aligned. While exploring
-          different options, I noticed that the audio started to resembled wind
-          chimes, which inspired a shift toward a Zen-like visual style. I kept
-          the layout minimal so the audio could guide the visual atmosphere.
-          This approach ensured that the interaction stayed focused on the
-          auditory experience rather than relying on symbols or complex
-          graphics, creating a cohesive and conceptually consistent UI.
-        </p>
-      </div>
-
-      <h2>Layout guide</h2>
-
-      <div class="sidebyside" style="margin-right: 10%; margin-left: 10%">
-        <div
-          class="hoverover"
-          data-hover="This layout was developed using the previous reference board as a guide."
-        >
-          <img
-            src="images/Layout-1.png"
-            alt="Layout-1"
-            style="width: 650px; height: 400px"
-          />
-        </div>
-
-        <div
-          class="hoverover"
-          data-hover="This was done after finalising on the reference board. Using the circles as found on the reference board to showcase the zen like feeling."
-        >
-          <img
-            src="images/Layout-3.png"
-            alt="Layout-2"
-            style="width: 650px; height: 400px"
-          />
-        </div>
-      </div>
-
-      <hr />
-
-      <h1 id="techCon">Technical Conceptualisation</h1>
-      <p style="margin-top: -100px">
-        For the advanced techniques, I implemented a “generate” button using
-        <span style="font-weight: bold">Math.random()</span>. When clicked, it
-        selects a word at random from a predefined list, which fits naturally
-        into the interaction and goes well with my desired interaction.
-
-        <br />
-        <br />
-        The system’s core interactions, implemented using JavaScript and
-        Tone.js, include:
+      <!------------------------------------------------------------------->
+      <!-- Design Value --------------------------------------------------->
+      <!------------------------------------------------------------------->
+      <h1 id="designValues">Design Values</h1>
+      <p>
+        While creating my website, I focused on several key design values to
+        ensure the experience would be engaging, intuitive, and enjoyable.
       </p>
 
       <div class="sidebyside2">
         <div class="background">
-          <h2 style="color: white">1. Sound While Typing</h2>
-          <p>Each keys triggers a corresponding note that plays when typed.</p>
+          <h2 style="color: white">1. Immersive Design</h2>
+          <p>
+            Each key press triggers a corresponding note, allowing users to
+            immerse themselves in a sensory interaction that blends text and
+            sound.
+          </p>
         </div>
 
         <div class="background">
-          <h2 style="color: white">2. Play Button Playback</h2>
-          <p>Sequentially plays all letters that are typed in.</p>
+          <h2 style="color: white">2. Playful Design</h2>
+          <p>
+            When users press “Play,” the interface sequentially plays back the
+            letters they typed, turning their words into a playful audio
+            sequence.
+          </p>
         </div>
 
         <div class="background">
-          <h2 style="color: white">3. Visual Tracking of Letters</h2>
-          <p>Highlights the current character being played in real time.</p>
+          <h2 style="color: white">3. Learnability</h2>
+          <p>
+            The current character being played is highlighted in real time,
+            helping users follow along and understand the interaction without
+            extra instructions.
+          </p>
         </div>
       </div>
 
-      <p>
-        To support these interactions, I mapped the keyboard so that each letter
-        and symbol corresponded to a distinct note. Symbols such as periods or
-        spaces were mapped to chords, expanding the musical possibilities.
-        Uppercase letters were mapped as sharps of their lowercase equivalents,
-        increasing the variety of sounds.
-      </p>
-
       <div class="sidebyside" style="margin-top: 100px">
         <div class="left">
-          <h2>Interaction 1: Sound While Typing</h2>
+          <h2>1. Immersive Design</h2>
           <p style="margin-left: -1px">
-            This interaction was implemented using an input event listener on
-            the &lt;textarea&gt;. When the user types, Tone.js’s
-            triggerAttackRelease method plays the corresponding note. While
-            technically straightforward, this required mapping of characters to
-            musical notes to ensure it was the right pitch, allowing the sound
-            to fit better with the aesthetic of the page.
+            To achieve immersion, I focused on creating variety and
+            unpredictability within the interface. For example, the ripple
+            animations are randomized, so each interaction feels slightly
+            different and keeps users engaged for longer. This unpredictability
+            encourages repeated exploration and maintains interest over time.
+            <br /><br />
+            Letter-by-letter feedback during playback also contributed to
+            immersion. Highlighting each character allowed users to track their
+            progress, reinforcing engagement and a sense of ownership. Since the
+            user’s words and reflections are translated into sound, this design
+            element made the experience feel personal and interactive, enhancing
+            the sense of being the creator of the experience. Having a stronger
+            sense of connection and immersion to the experience.
           </p>
         </div>
         <div class="right">
           <img
-            src="images/playingNotes.png"
+            src="images/RandomRipple.png"
             alt="code-1"
             style="width: 750px"
           />
@@ -206,157 +117,350 @@
           <img src="images/code.png" alt="code-1" style="height: 400px" />
         </div>
         <div class="right">
-          <h2>Interaction 2: Play Button Playback</h2>
+          <h2>2. Playful Design</h2>
           <p style="margin-right: -1px">
-            This interaction was implemented by iterating through all the
-            characters in the text area and playing each one using
-            triggerAttackRelease. As the code progresses, each character is read
-            in sequence, triggering the corresponding note or chord based on the
-            predefined mappings. This allows the text to be “sounded out” in
-            real time, creating an audio piece made by letters and punucation.
+            The website encourages creativity by letting users turn words and
+            reflections into sound. The experience is non-linear, there’s no
+            single “correct” way to interact. Even with a limited set of
+            buttons, the vast possibilities of language input allow for infinite
+            variations. This playful structure invites experimentation and keeps
+            the experience fresh and engaging.
           </p>
         </div>
       </div>
 
-      <h2 style="margin-top: 100px">
-        Interaction 3: Visual Tracking of Letters
-      </h2>
-
-      <p>
-        This interaction presented a significant technical challenge. The key
-        difficulty was tracking individual letters within a &lt;textarea&gt; and
-        updating their visual state to reflect the corresponding sound being
-        played. Standard &lt;textarea&gt; elements do not allow per-character
-        styling, so I implemented a layered solution: each typed character was
-        mirrored as a separate &lt;span&gt; within an overlapping &lt;div&gt;.
-        <br />
-        This approach enabled real-time tracking and synchronisation of visual
-        with audio playback.
-
-        <br />
-        Initially, I used a standard &lt;input&gt; field for typing and
-        highlighting. However, this approach failed because input fields cannot
-        style individual character, and styling only applies to the text. Hence,
-        I tried the overlay option. With this implementation, each character
-        could be individually highlighted as it played, providing clear visual
-        feedback that reinforces the auditory experience.
+      <h2 style="margin-top: 100px">3. Learnability</h2>
+      <p style="color: black">
+        I aimed for a clean and minimal interface to make the system easy to
+        learn and navigate. Immediate audio feedback on typing introduces users
+        to the concept naturally. Giving an insight to what the website might be
+        about.
       </p>
+      <img src="images/webpage-1.png" alt="code-1" style="width: 1320px" />
 
-      <div class="sidebyside2">
-        <img src="images/highlight-feature.png" alt="highlight-feature" />
-        <img
-          src="images/highlighting.png"
-          alt="highlighted"
-          style="width: 500px"
-        />
-      </div>
-
-      <h1 id="userTesting">User Testing</h1>
-      <p>For user testing I asked 2 questions for feedback which were:</p>
-
-      <div class="sidebyside2">
-        <div class="background2">
-          <h2 style="color: white; margin-bottom: -10px">Question 1</h2>
-          <p>
-            In what ways does the style and design of the interface feel calming
-            (or not calming) to you? Does the sound match the experience?
+      <div
+        class="sidebyside2"
+        style="margin-top: 50px; margin-right: 10%; margin-left: 10%"
+      >
+        <div class="colouredBg">
+          <p style="color: black">
+            The use of button focus, helping users to navigate to the next step
+            without text or instructions. For example, is the play button’s
+            state change when there is a text in the text box, allowing users to
+            learn what the next possible ‘step’ is.
           </p>
         </div>
 
-        <div class="background2">
-          <h2 style="color: white; margin-bottom: -10px">Question 2</h2>
-          <p>
-            How did you experience the interactions (typing, playback, reset)?
-            What felt smooth, and what felt confusing?
+        <div class="colouredBg">
+          <p style="color: black">
+            With only three clearly labelled buttons (Play, Reset, Generate),
+            users can easily experiment with the interface and learn its
+            functions through exploration. This simplicity ensures that both
+            first-time and returning users can quickly feel comfortable and
+            confident interacting with the UI.
           </p>
         </div>
       </div>
-      <p>
-        I wanted to know more about whether the style matched the sound since
-        that was one of my biggest concerns. The other was interaction, since I
-        didn’t provide instructions and I needed to know if users could still
-        understand what to do when they entered the website.
-      </p>
+
+      <!------------------------------------------------------------------->
+      <!-- UI Design-------------------------------------------------------->
+      <!------------------------------------------------------------------->
+
+      <h1 id="techCon">UI Design</h1>
+
+      <div class="backgroundcolour">
+        <h2>Information Design</h2>
+
+        <div class="sidebyside" style="margin-top: 100px">
+          <div class="left">
+            <h3>Layout</h3>
+            <p style="margin-left: -1px">
+              The minimal layout not only creates a calming atmosphere but also
+              makes navigation intuitive. The placeholder phrase acts as a
+              subtle starting point, inviting users to begin interacting. The
+              textbox, positioned prominently as the largest element on the
+              screen, naturally draws attention as the primary input area.
+              <br /><br />
+              Above the textbox, the Generate button offers users an easy way to
+              receive a prompt if they’re unsure what to write, supporting
+              different levels of engagement. The Play and Reset buttons are
+              placed at the bottom of the interface to signal the end of the
+              interaction, reinforcing a clear, top-to-bottom flow from input to
+              output. This deliberate spatial hierarchy ensures that users can
+              understand the interaction sequence at a glance.
+            </p>
+          </div>
+          <div class="right">
+            <img src="images/webpage-2.png" alt="code-1" style="width: 750px" />
+          </div>
+        </div>
+
+        <div class="sidebyside" style="margin-top: 100px">
+          <div class="left">
+            <img
+              src="images/webpage-1.png"
+              alt="code-1"
+              style="height: 400px"
+            />
+          </div>
+          <div class="right">
+            <h3>Focus Mode</h3>
+            <p style="margin-right: -1px">
+              In addition to layout, Focus Mode provides dynamic visual feedback
+              to guide users through interaction. Instead of using explicit
+              instructions, the design employs subtle visual cues, for example,
+              when users type into the textbox, the Play button becomes
+              highlighted. This state change signals the next logical action,
+              encouraging progression without additional text.
+              <br /><br />
+              Together, these two methods establish a clear and intuitive
+              interaction flow. They support learnability, reduce cognitive
+              load, and invite users to explore the interface confidently, even
+              on their first visit.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div class="sidebyside" style="margin-top: 100px">
         <div class="left">
-          <h2>Styling</h2>
+          <h2>Mapping</h2>
           <p style="margin-left: -1px">
-            After user testing, I got generally positive feedback, which
-            reassured me that I was going in the right direction. For styling, I
-            understood that users clearly picked up on my calming intentions,
-            with one even describing the interface as “Zen.” This showed me that
-            the green colour scheme, simple shapes, and layout were effective in
-            creating the calm energy I wanted.
+            Since the main theme of the project is Novel Input, I designed the
+            interface to encourage exploration rather than following strict
+            instructions. Users type a phrase or reflection, making the
+            experience interactive and non-linear.
+            <br /><br />
+            Using a simple textbox leverages a familiar interface pattern,
+            allowing users to understand immediately what action is required.
+            Each keystroke maps naturally to a corresponding sound, creating a
+            cause-and-effect relationship that reinforces the interaction and
+            supports creativity. This mapping ensures that users feel in control
+            while exploring the system’s possibilities.
           </p>
         </div>
         <div class="right">
-          <img src="images/Feedback 1.png" alt="code-1" style="width: 750px" />
+          <img src="images/Textbox.png" alt="code-1" style="width: 750px" />
         </div>
       </div>
 
       <div class="sidebyside" style="margin-top: 100px">
         <div class="left">
-          <img src="images/Feedback 2.png" alt="code-1" style="width: 750px" />
+          <img src="images/StyleGuide.png" alt="code-1" style="height: 400px" />
         </div>
         <div class="right">
-          <h2>Interaction</h2>
+          <h2>Characterisation</h2>
           <p style="margin-right: -1px">
-            For interactions, the feedback was more mixed but very useful. Some
-            people noted that the interface was intuitive and smooth, while
-            others pointed out issues such as the sound playing before pressing
-            play, or confusion about the two play buttons. The biggest piece of
-            feedback I found helpful was that the generate button didn’t look
-            clickable, which caused some confusion. This is something I can
-            improve by either changing the wording to “surprise me” or maybe
-            adding a thin boarder around the button. I need to test it out to
-            see what works the best.
+            The website intentionally embodies a Zen and calming style to match
+            the auditory experience. Green is the primary colour, while elements
+            are rounded and simple, creating a soft and approachable visual
+            language. Subtle textures and the brushstroke-inspired ripple
+            animations add layers to the design, reinforcing the meditative
+            quality of the interaction. This consistent characterisation helps
+            set user expectations, provides context for the interactions, and
+            aligns the visual style with the sound, enhancing the immersive
+            experience.
           </p>
         </div>
       </div>
 
-      <p>
-        Overall, the feedback confirmed that the calming style and matching
-        sound design were successful, but I need to refine the clarity of
-        certain interactions so that users immediately understand how to use the
-        interface.
-      </p>
-
-      <div id="summary" class="sidebyside">
-        <h1 class="left">In Conclusion...</h1>
-        <p class="right">
-          this project has taught me a great deal about working with Tone.js and
-          designing interactions around sound. It challenged me to transform a
-          simple idea into a full website experience and encouraged me to think
-          creatively when solving technical challenges, such as the textarea
-          highlight issue. Through this process, I developed a better
-          understanding of how sound, visuals, and user interactions can work
-          together to create an immersive and cohesive experience.
-          <br />
-          <br />
-          Looking ahead, my next steps are to refine the website based on peer
-          feedback, improving clarity and usability of the interface. I also aim
-          to explore new interactive features, such as animating the background
-          ripple in response to the sounds being played, which would enhance the
-          immersive and calming atmosphere of the project.
+      <div class="backgroundcolour">
+        <h2>Feedback</h2>
+        <p>
+          Providing clear and immediate feedback was a priority. Using 3 method
+          to showcase this.
         </p>
-      </div>
 
-      <button id="backTopBtn" style="margin-top: 50px">back to top.</button>
-
-      <div id="ending">
-        <p>jump back</p>
-        <div class="sidebyside">
-          <button class="project" id="projectBtn1">
-            project conceptualisation.
-          </button>
-          <button class="project" id="techBtn1">
-            technical conceptualisation.
-          </button>
-          <button class="project" id="peerBtn1">user testing.</button>
+        <div class="sidebyside" style="margin-top: 100px">
+          <div class="left">
+            <p style="margin-left: -1px">
+              Each keystroke triggers a corresponding sound, allowing users to
+              understand what the interface does while subtly introducing them
+              to its core function.
+            </p>
+          </div>
+          <div class="right">
+            <img src="images/code.png" alt="code-1" style="width: 750px" />
+          </div>
         </div>
 
-        <p class="subtext" id="name">Jannalyn Tan- s4056775</p>
+        <div class="sidebyside" style="margin-top: 100px">
+          <div class="left">
+            <img
+              src="images/highlight-feature.png"
+              alt="code-1"
+              style="height: 400px"
+            />
+          </div>
+          <div class="right">
+            <p style="margin-right: -1px">
+              The letter-by-letter highlighting during playback provides another
+              layer of feedback, helping users track the current position in
+              their typed phrase. This reinforces engagement and ownership, as
+              users can follow the progression of their own words being “played”
+              in real time.
+            </p>
+          </div>
+        </div>
+
+        <div class="sidebyside" style="margin-top: 100px">
+          <div class="left">
+            <p style="margin-left: -1px">
+              Additional feedback cues include button hover states, which change
+              the cursor and slightly adjust the button size, signalling
+              interactivity and ensuring users know which elements are
+              actionable. These feedback mechanisms, both visual and auditory,
+              help maintain clarity and support intuitive interaction throughout
+              the UI.
+            </p>
+          </div>
+          <div class="right">
+            <img
+              src="images/ButtonState.png"
+              alt="code-1"
+              style="width: 600px"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!------------------------------------------------------------------->
+      <!-- Design Process-------------------------------------------------->
+      <!------------------------------------------------------------------->
+
+      <h1 id="techCon">Design Process</h1>
+      <p>
+        Since the progress milestone presentation, there haven’t been any major
+        conceptual changes to the overall design. The core idea and aesthetic
+        stayed the same, but I made a series of smaller design tweaks and
+        interactive additions to build out the experience more fully. Most of
+        these changes came from user feedback during testing and from noticing
+        areas that felt underdeveloped when I revisited the prototype. My main
+        focus was on improving clarity, usability, and making the experience
+        feel more immersive.
+      </p>
+
+      <section class="backgroundcolour" style="margin-top: 100px">
+        <h2>Feedback Changes</h2>
+        <div class="sidebyside">
+          <div class="left">
+            <p style="margin-left: -1px">
+              One of the most significant changes came from how users interacted
+              with the buttons. Initially, my buttons didn’t follow typical UI
+              conventions, they didn’t have a border or background, just styled
+              text. I assumed users would still recognise them because the
+              interface was clean and minimal, but during testing, many
+              completely missed them. They thought the text was decorative
+              rather than clickable, which wasn’t what I intended at all.
+
+              <br /><br />
+              Reflecting on this, I realised I’d prioritised the aesthetic side
+              too much without considering how users actually interpret visual
+              cues. To fix this, I added a slight background to the buttons,
+              while keeping the hover interactions (growing slightly and
+              changing cursor). This small tweak made a big difference, users
+              started noticing the buttons immediately, and the flow through the
+              site became much smoother. It was a good reminder that sometimes
+              simple, conventional patterns help support the experience rather
+              than take away from it.
+            </p>
+          </div>
+          <div class="right">
+            <img src="images/Textbox.png" alt="code-1" style="width: 750px" />
+          </div>
+        </div>
+
+        <div class="sidebyside" style="margin-top: 100px">
+          <div class="left">
+            <img
+              src="images/highlight-feature.png"
+              alt="code-1"
+              style="height: 400px"
+            />
+          </div>
+          <div class="right">
+            <p style="margin-right: -1px">
+              Another small but meaningful change I made was updating the
+              placeholder text from “type here” to “reflect on what makes you
+              calm.” This shift aligned the interface more closely with the
+              overall concept and tone of the website, while also addressing
+              user feedback. During testing, some users mentioned they weren’t
+              sure what to type, so adding this prompt gave them a gentle
+              starting point. It not only guided their interaction but also set
+              the emotional context of the experience right from the beginning.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <h2>Ripple Animation</h2>
+      <p>
+        Another major addition was the ripple animation that appears when the
+        audio plays. Initially, when the sound played, the interface felt too
+        static, with the only change was the text being highlighted. I wanted
+        the audio interaction to feel more alive and reflective of the project’s
+        calm, zen-inspired theme. This so helped to enhancing overall user
+        experience using the website. Making the website not only more immersive
+        but more fun overall.
+      </p>
+      <div class="sidebyside">
+        <div class="left">
+          <p style="margin-left: -1px">
+            While creating this website I always thought that the sound itself
+            reminded me of wind chimes and water drums, which led to the idea of
+            mimicking a droplet hitting water. By adding ripples that expand and
+            slowly fade away, I created a visual element that worked alongside
+            the sound, turning the moment into both an audio and visual
+            experience.
+          </p>
+        </div>
+        <div class="right">
+          <img src="images/Textbox.png" alt="code-1" style="width: 750px" />
+        </div>
+      </div>
+
+      <div class="sidebyside" style="margin-top: 100px">
+        <div class="left">
+          <img
+            src="images/highlight-feature.png"
+            alt="code-1"
+            style="height: 400px"
+          />
+        </div>
+        <div class="right">
+          <p style="margin-right: -1px">
+            Getting this right wasn’t easy. I went through multiple rounds of
+            testing to nail the timing and randomness. I used CSS animations
+            triggered through JavaScript and added &lt;math.random&gt; so the
+            animations wouldn’t feel too repetitive, making it more like real
+            water droplets. It took time to balance the speed, size, and
+            fade-out so it didn’t feel too artificial. But once it clicked, it
+            really brought the interaction to life and made the whole experience
+            feel more complete and immersive.
+          </p>
+        </div>
+      </div>
+
+      <div class="sidebyside" style="margin-top: 100px">
+        <div class="left">
+          <h2>Mapping</h2>
+          <p style="margin-left: -1px">
+            Since the main theme of the project is Novel Input, I designed the
+            interface to encourage exploration rather than following strict
+            instructions. Users type a phrase or reflection, making the
+            experience interactive and non-linear.
+            <br /><br />
+            Using a simple textbox leverages a familiar interface pattern,
+            allowing users to understand immediately what action is required.
+            Each keystroke maps naturally to a corresponding sound, creating a
+            cause-and-effect relationship that reinforces the interaction and
+            supports creativity. This mapping ensures that users feel in control
+            while exploring the system’s possibilities.
+          </p>
+        </div>
+        <div class="right">
+          <img src="images/Textbox.png" alt="code-1" style="width: 750px" />
+        </div>
       </div>
     </section>
   </body>

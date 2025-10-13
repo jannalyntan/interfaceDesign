@@ -9,12 +9,20 @@ p {
   margin-right: 10%;
 }
 
-h2 {
+h1,
+h2,
+h3 {
   color: #535923;
 }
 
 img {
   border-radius: 10px;
+}
+
+.backgroundcolour {
+  background-color: #5359232e;
+  padding: 100px;
+  margin-top: 50px;
 }
 /* ----------------------------------- */
 /* Heading----------------------------- */
@@ -97,6 +105,10 @@ button:hover {
   gap: 20px;
 }
 
+.sidebysideH2 {
+  margin-left: 10%;
+}
+
 .left {
   text-align: left;
   align-items: left;
@@ -117,8 +129,10 @@ button:hover {
 .sidebyside2 {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 15px;
   color: white;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 /* --------------------------------------- */
@@ -169,7 +183,7 @@ button:hover {
 /* Others -------------------------------- */
 /* --------------------------------------- */
 
-#projectCon,
+#designValues,
 #techCon,
 #userTesting {
   font-size: 180px;
@@ -180,6 +194,14 @@ button:hover {
   background-image: url(images/background-texture.png);
   padding: 50px;
   border-radius: 15px;
+  width: 400px;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .background2 {
@@ -195,14 +217,11 @@ button:hover {
   text-align: center;
 }
 
-#summary {
-  background-color: #535923;
+.colouredBg {
+  background-color: #5359231a;
   padding: 50px;
-  margin-left: 10%;
-  margin-right: 10%;
   border-radius: 15px;
   color: white;
-  margin-top: 50px;
 }
 
 #summary h1 {
