@@ -212,6 +212,21 @@ button:hover {
   text-align: center;
 }
 
+.background1 {
+  background-image: url(images/background-texture.png);
+  padding: 50px;
+  border-radius: 15px;
+  width: 400px;
+  height: 100px;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .background2 {
   background-image: url(images/background-texture.png);
   width: 600px;
