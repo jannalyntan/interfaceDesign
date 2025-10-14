@@ -240,7 +240,6 @@ textarea::placeholder {
   /* animation: ripplePulse 5s ease-out; */
 }
 
-/* Circle size variation for ripple effect */
 .ripple-circle:nth-child(1) {
   width: 450px;
   animation-delay: 0.6s;
@@ -257,7 +256,6 @@ textarea::placeholder {
   width: 150px;
 }
 
-/* Simple pulse ripple animation */
 @keyframes ripplePulse {
   0% {
     transform: translate(-50%, -50%) scale(1);

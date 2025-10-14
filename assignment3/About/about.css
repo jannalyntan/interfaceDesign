@@ -304,6 +304,7 @@ button:hover {
 
 a {
   text-decoration: none;
+  color: #000;
 }
 
 a:hover {
@@ -327,7 +328,8 @@ a:hover {
 
 .timeline {
   position: relative;
-  max-width: 1000px;
+  width: 80%;
+  max-width: 1400px; /* optional */
   margin: 0 auto;
   padding: 50px 0;
 }
@@ -335,31 +337,36 @@ a:hover {
 .timeline::after {
   content: "";
   position: absolute;
-  width: 10px;
+  width: 6px;
   background-color: #535923;
   top: 0;
   bottom: 0;
   left: 50%;
-  margin-left: -2px;
+  transform: translateX(-50%);
+  margin-top: 71px;
+  margin-bottom: 390px;
 }
 
 .timeline-item {
-  padding: 2px 40px;
   position: relative;
   width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
 }
 
 .timeline-item.left {
-  left: -177px;
+  left: -134px;
+  text-align: right;
 }
 
 .timeline-item.right {
-  left: 499px;
+  left: 49.7%;
+  text-align: left;
 }
 
 .timeline-item .content {
   background-color: #5359231a;
-  padding: 50px;
+  padding: 30px;
   border-radius: 15px;
   position: relative;
 }
@@ -395,13 +402,15 @@ a:hover {
 .timeline-item p,
 .timeline-item li {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  line-height: 1.5;
+  line-height: 1.2;
   color: black;
+  text-align: left;
 }
 
 .timeline-item ul {
   padding-left: 20px;
   margin: 10px 0;
+  text-align: left;
 }
 
 @media screen and (max-width: 768px) {
