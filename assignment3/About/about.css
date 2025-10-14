@@ -95,6 +95,10 @@ button:hover {
   margin-right: 5%;
 }
 
+#topButtons {
+  z-index: 10;
+  gap: 50px;
+}
 /* --------------------------------------- */
 /* side by side----------------------------- */
 /* --------------------------------------- */
@@ -143,8 +147,9 @@ button:hover {
 .hoverover {
   color: rgb(255, 255, 255);
   border-radius: 5px;
-  width: 650px;
-  height: 400px;
+  width: 550px;
+  height: 325px;
+
   text-align: center;
   display: flex;
   align-items: center;
@@ -183,9 +188,12 @@ button:hover {
 /* Others -------------------------------- */
 /* --------------------------------------- */
 
-#designValues,
-#techCon,
-#userTesting {
+#designValuesCon,
+#uiCon,
+#designProcessCon,
+#timelineCon,
+#proudCon,
+#challengingCon {
   font-size: 180px;
   color: #535923;
 }
@@ -273,6 +281,16 @@ button:hover {
   position: absolute;
   bottom: 8px;
   right: 16px;
+}
+
+#summary {
+  background-color: #535923;
+  padding: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 15px;
+  color: white;
+  margin-top: 50px;
 }
 
 /* --------------------------------------- */
@@ -432,4 +450,38 @@ a:hover {
     left: 18px;
     right: auto;
   }
+}
+
+/* --------------------------------------- */
+/* Back to Top--------------------------------- */
+/* --------------------------------------- */
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px; /* you can change this to 'left' if you want it on the left side */
+  z-index: 1000;
+  background-color: #5f6833; /* your theme green */
+  color: white;
+  border: none;
+  outline: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+#backToTopBtn:hover {
+  background-color: #7e8b44; /* slightly lighter on hover */
+}
+
+/* When active (visible after scroll) */
+#backToTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
 }

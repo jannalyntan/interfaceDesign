@@ -23,33 +23,40 @@
   <body>
     <section class="content">
       <div id="heading">
-        <a
-          href="https://jannalyntan.github.io/interfaceDesign/assignment2/"
-          target="_blank"
-        >
-          <button style="margin-top: 90px">go to project.</button>
-        </a>
+        <div class="sidebyside" style="margin-top: 90px" id="topButtons">
+          <a
+            href="https://jannalyntan.github.io/interfaceDesign/assignment2/"
+            target="_blank"
+          >
+            <button>go to prototype.</button>
+          </a>
 
-        <h1 style="font-size: 180px; margin-top: -50px; color: white">
+          <a
+            href="https://jannalyntan.github.io/interfaceDesign/assignment3/"
+            target="_blank"
+          >
+            <button>go to final project.</button>
+          </a>
+        </div>
+        <h1 style="font-size: 180px; margin-top: -20px; color: white">
           Assingment 3 Reflection
         </h1>
 
         <p style="margin-top: -100px">skip to</p>
         <div class="sidebyside">
-          <button class="project" id="projectBtn">
-            project conceptualisation.
-          </button>
-          <button class="project" id="techBtn">
-            technical conceptualisation.
-          </button>
-          <button class="project" id="peerBtn">user testing.</button>
+          <button class="project" id="designValuesBtn">design values.</button>
+          <button class="project" id="uiBtn">ui design.</button>
+          <button class="project" id="designProcessBtn">design process.</button>
+          <button class="project" id="timelineBtn">timeline.</button>
+          <button class="project" id="proudBtn">most proud.</button>
+          <button class="project" id="challengingBtn">most challenging.</button>
         </div>
       </div>
 
       <!------------------------------------------------------------------->
       <!-- Design Value --------------------------------------------------->
       <!------------------------------------------------------------------->
-      <h1 id="designValues">Design Values</h1>
+      <h1 id="designValuesCon">Design Values</h1>
       <p>
         While creating my website, I focused on several key design values to
         ensure the experience would be engaging, intuitive, and enjoyable.
@@ -166,11 +173,16 @@
       <!-- UI Design-------------------------------------------------------->
       <!------------------------------------------------------------------->
 
-      <h1 id="techCon">UI Design</h1>
-
+      <h1 id="uiCon">UI Design</h1>
+      <p style="margin-top: -100px">skip to</p>
+      <div class="sidebyside">
+        <button class="project" id="infoDesignBtn">information design.</button>
+        <button class="project" id="mapping">mapping.</button>
+        <button class="project" id="characterisation">characterisation.</button>
+        <button class="project" id="feedBtn">feedback.</button>
+      </div>
       <div class="backgroundcolour">
-        <h2>Information Design</h2>
-
+        <h2 id="infoDesignCon">Information Design</h2>
         <div class="sidebyside" style="margin-top: 100px">
           <div class="left">
             <h3>Layout</h3>
@@ -224,7 +236,7 @@
 
       <div class="sidebyside" style="margin-top: 100px">
         <div class="left">
-          <h2>Mapping</h2>
+          <h2 id="mappingCon">Mapping</h2>
           <p style="margin-left: -1px">
             Since the main theme of the project is Novel Input, I designed the
             interface to encourage exploration rather than following strict
@@ -249,7 +261,7 @@
           <img src="images/StyleGuide.png" alt="code-1" style="height: 400px" />
         </div>
         <div class="right">
-          <h2>Characterisation</h2>
+          <h2 id="characterisationCon">Characterisation</h2>
           <p style="margin-right: -1px">
             The website intentionally embodies a Zen and calming style to match
             the auditory experience. Green is the primary colour, while elements
@@ -265,7 +277,7 @@
       </div>
 
       <div class="backgroundcolour">
-        <h2>Feedback</h2>
+        <h2 id="feedCon">Feedback</h2>
         <p>
           Providing clear and immediate feedback was a priority. Using 3 method
           to showcase this.
@@ -328,7 +340,8 @@
       <!-- Design Process-------------------------------------------------->
       <!------------------------------------------------------------------->
 
-      <h1 id="techCon">Design Process</h1>
+      <h1 id="designProcessCon">Design Process</h1>
+
       <p>
         Since the progress milestone presentation, there haven’t been any major
         conceptual changes to the overall design. The core idea and aesthetic
@@ -339,6 +352,35 @@
         focus was on improving clarity, usability, and making the experience
         feel more immersive.
       </p>
+
+      <p>
+        Here is 3 main things I changed between the previous user testing and
+        now.
+      </p>
+
+      <div class="sidebyside">
+        <div class="background1">
+          <h2 style="color: white">Feedback Changes</h2>
+          <p style="margin-top: -10px">
+            Changes made based on the user testing feedback.
+          </p>
+        </div>
+
+        <div class="background1">
+          <h2 style="color: white">Ripple Animation</h2>
+          <p style="margin-top: -10px">
+            Additional element added to make the website more engaging.
+          </p>
+        </div>
+
+        <div class="background1">
+          <h2 style="color: white">Focus Button</h2>
+          <p style="margin-top: -10px">
+            Including this to help make the interaction smoother and easier to
+            navigate.
+          </p>
+        </div>
+      </div>
 
       <section class="backgroundcolour" style="margin-top: 100px">
         <h2>Feedback Changes</h2>
@@ -495,10 +537,10 @@
         </p>
       </section>
       <!------------------------------------------------------------------->
-      <!-- Design Process-------------------------------------------------->
+      <!-- Timeline-------------------------------------------------->
       <!------------------------------------------------------------------->
 
-      <h1 id="techCon">Timeline</h1>
+      <h1 id="timelineCon">Timeline</h1>
 
       <p>
         This project was completed over the span of eight weeks, moving through
@@ -507,35 +549,35 @@
       <section>
         <img src="images/Timeline-1.png" alt="code-1" style="width: 1450px" />
         <div class="timeline-container">
-          <a href="" id="week1">
+          <a href="#week1content" id="week1">
             <h2>Week 1</h2>
             <p>Planning & Conceptualisation</p>
           </a>
-          <a href="" class="weeks" id="week2">
+          <a href="#week2content" class="weeks" id="week2">
             <h2>Week 2</h2>
             <p>Start of Coding</p>
           </a>
-          <a href="" class="weeks" id="week3">
+          <a href="#week3content" class="weeks" id="week3">
             <h2>Week 3</h2>
             <p>Sound & Style</p>
           </a>
-          <a href="" class="weeks" id="week4">
+          <a href="#week4content" class="weeks" id="week4">
             <h2>Week 4</h2>
             <p>User Testing</p>
           </a>
-          <a href="" class="weeks" id="week5">
+          <a href="#week5content" class="weeks" id="week5">
             <h2>Week 5</h2>
             <p>Improvements</p>
           </a>
-          <a href="" class="weeks" id="week6">
+          <a href="#week5content" class="weeks" id="week6">
             <h2>Week 6</h2>
             <p>Improvements</p>
           </a>
-          <a href="" class="weeks" id="week7">
+          <a href="#week5content" class="weeks" id="week7">
             <h2>Week 7</h2>
             <p>Improvements</p>
           </a>
-          <a href="" class="weeks" id="week8">
+          <a href="#week8content" class="weeks" id="week8">
             <h2>Week 8</h2>
             <p>Finalisation</p>
           </a>
@@ -543,7 +585,7 @@
       </section>
 
       <section class="timeline">
-        <div class="timeline-item left">
+        <div class="timeline-item left" id="week1content">
           <div class="content">
             <h2>Planning & Conceptualisation <span>(Week 1)</span></h2>
             <p>
@@ -574,7 +616,7 @@
         </div>
 
         <div class="timeline-item right">
-          <div class="content">
+          <div class="content" id="week2content">
             <h2>Start of Coding <span>(Week 1–3)</span></h2>
             <p>
               This phase ended up taking much longer than I expected. Turning
@@ -602,7 +644,7 @@
               <li>
                 <h3>Reset</h3>
                 <p style="margin-left: -0px; margin-top: -20px">
-                  To give users a fresh canvas. .
+                  To give users a fresh canvas.
                 </p>
               </li>
             </ul>
@@ -622,7 +664,7 @@
         </div>
 
         <div class="timeline-item left">
-          <div class="content">
+          <div class="content" id="week3content">
             <h2>Sound & Style <span>(Week 3)</span></h2>
             <p>
               At this stage, I realised that my initial visual style didn’t
@@ -648,7 +690,7 @@
         </div>
 
         <div class="timeline-item right">
-          <div class="content">
+          <div class="content" id="week4content">
             <h2>User Testing <span>(Week 4)</span></h2>
             <p>
               User testing played a big role in refining the project. I focused
@@ -666,7 +708,7 @@
         </div>
 
         <div class="timeline-item left">
-          <div class="content">
+          <div class="content" id="week5content">
             <h2>Improvements <span>(Week 5–7)</span></h2>
             <p>
               In the final stage, I focused on refining interactions, making the
@@ -678,7 +720,7 @@
         </div>
 
         <div class="timeline-item right">
-          <div class="content">
+          <div class="content" id="week8content">
             <h2>Finalisation <span>(Week 8)</span></h2>
             <p>
               Looking back, the timeline overall loosely followed my initial
@@ -699,7 +741,7 @@
       <!-- Proud-------------------------------------------------->
       <!------------------------------------------------------------------->
 
-      <h1 id="techCon">Most Proud</h1>
+      <h1 id="proudCon">Most Proud</h1>
 
       <p>
         I think what I’m most proud of is the overall journey of bringing this
@@ -712,11 +754,144 @@
         visual direction evolved significantly.
       </p>
 
+      <div class="sidebyside" style="margin-right: 10%; margin-left: 10%">
+        <div
+          class="hoverover"
+          data-hover="This initial design explored my first visual direction before updating the moodboard. It allowed me to experiment with the layout and determine the best placement for each button."
+        >
+          <img
+            src="images/Old Design@4x.png"
+            alt="Early Design Style"
+            style="width: 550px"
+          />
+        </div>
+
+        <div
+          class="hoverover"
+          data-hover="This is the prototype used for user testing, it integrates the layout and new choosen style into a cohesive website."
+        >
+          <img
+            src="images/Layout-3.png"
+            alt="Final Website"
+            style="width: 550px"
+          />
+        </div>
+
+        <div
+          class="hoverover"
+          data-hover="This my final refined website. Further polishing it after prototyping."
+        >
+          <img
+            src="images/webpage-2.png"
+            alt="Final Website"
+            style="width: 550px"
+          />
+        </div>
+      </div>
+
+      <p>
+        I’m especially glad I didn’t lock myself into one visual style too
+        early. Allowing myself to stay flexible meant I could adapt based on
+        what the project needed at different stages. Shifting towards a calming,
+        zen aesthetic opened up new design possibilities, such as the ripple
+        animation, which helped create a more immersive atmosphere and tied the
+        visual and audio elements together more seamlessly.
+      </p>
+
+      <div class="sidebyside" style="margin-top: 100px">
+        <div class="left">
+          <img
+            src="images/Artboard 12@4x.png"
+            alt="code-1"
+            style="height: 600px"
+          />
+        </div>
+        <div class="right">
+          <p style="margin-right: -1px">
+            On the technical side, I’m proud of how the sound design and
+            animation came together. This was my first time designing something
+            centred around sound, and it took a lot of experimentation with
+            Tone.js to find and fine-tune the right tones to match my vision.
+            The animation work also involved a lot of trial and error, and
+            getting it to function smoothly was incredibly satisfying. Looking
+            back, both the conceptual flexibility and technical problem-solving
+            are aspects I’m genuinely proud of.
+          </p>
+        </div>
+      </div>
       <!------------------------------------------------------------------->
       <!-- Most Challenging-------------------------------------------------->
       <!------------------------------------------------------------------->
 
-      <h1 id="techCon">Most Challenging</h1>
+      <h1 id="challengingCon">Most Challenging</h1>
+
+      <div class="sidebyside">
+        <div class="left">
+          <p style="margin-left: -1px">
+            The most challenging (and ironically, most rewarding) part was
+            building the letter-tracking visual element. This feature required
+            the most research, testing, and creative problem-solving. I had to
+            think outside the box to get it working the way I imagined,
+            including overlaying text and working around the limitations of the
+            &lt;textarea&gt; element.
+            <br /><br />
+            I tried multiple methods before landing on a solution that felt
+            right. This process was time-consuming and often frustrating, but
+            finally seeing it work made it one of the most fulfilling parts of
+            the project. It pushed me to deepen my technical skills and
+            problem-solving abilities more than any other feature.
+          </p>
+        </div>
+        <div class="right">
+          <img
+            src="images/highlight-feature.png"
+            alt="code-1"
+            style="width: 750px"
+          />
+        </div>
+      </div>
+
+      <div id="summary" class="sidebyside">
+        <h1 class="left" style="color: white">In Conclusion...</h1>
+        <p class="right">
+          Overall, I’m genuinely proud of this website and the process it took
+          to create it. It wasn’t easy, there were moments of uncertainty,
+          constant iteration, and technical roadblocks, but I’m glad I
+          persevered and kept refining it.
+          <br /><br />
+          If I had more time, I’d love to expand the site by introducing
+          different themes, each with its own background, colour palette, and
+          matching soundscape, to give users more ways to shape their calming
+          experience.
+          <br /><br />
+          This project taught me a lot, both technically and creatively. I’ve
+          gained a deeper understanding of how interaction, sound, and visual
+          design can work together, and I’m excited to apply these skills and
+          insights to future projects.
+        </p>
+      </div>
+
+      <button id="backTopBtn" style="margin-top: 50px">back to top.</button>
+
+      <div id="ending">
+        <p>jump back</p>
+        <div class="sidebyside">
+          <button class="project" id="designValuesBtn1">design values.</button>
+          <button class="project" id="uiBtn1">ui design.</button>
+          <button class="project" id="designProcessBtn1">
+            design process.
+          </button>
+          <button class="project" id="timelineBtn1">timeline.</button>
+          <button class="project" id="proudBtn1">most proud.</button>
+          <button class="project" id="challengingBtn1">
+            most challenging.
+          </button>
+        </div>
+
+        <p class="subtext" id="name">Jannalyn Tan- s4056775</p>
+      </div>
     </section>
+
+    <button id="backToTopBtn" title="Back to top">↑</button>
   </body>
 </html>
